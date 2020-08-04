@@ -1,0 +1,65 @@
+{
+    "agent": {
+        "arrival_time_ms": 1584313036151,
+        "hangup_time_ms": 1584313113007,
+        "metadata": {
+            "agent_name": "Mary"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584313093976,
+                "data": {
+                    "company name": "Fossil Gas",
+                    "money amount": "119",
+                    "task_type": "pay bill",
+                    "company address": "133 First Street Harper Valley CA 39028"
+                }
+            }
+        ],
+        "speaker_id": 44,
+        "survey_response": {
+            "submit_time_ms": 1584313108989,
+            "data": {
+                "partner_rating": "10",
+                "ease_of_connection": "10"
+            }
+        }
+    },
+    "caller": {
+        "arrival_time_ms": 1584313032086,
+        "hangup_time_ms": 1584313110554,
+        "metadata": {
+            "first and last name": "Patricia Smith"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584313097954
+            }
+        ],
+        "speaker_id": 46,
+        "survey_response": {
+            "submit_time_ms": 1584313114301,
+            "data": {
+                "partner_rating": "10",
+                "ease_of_connection": "10"
+            }
+        }
+    },
+    "end_time_ms": 1584313110374,
+    "sid": "f1d92443445f4eb9",
+    "start_time_ms": 1584313042124,
+    "labels": {
+        "caller_mos": 3.0,
+        "lhvb_script": 5.0,
+        "agent_mos": 4.0
+    },
+    "session": "Little Harper Valley 1",
+    "tasks": [
+        {
+            "company name": "Fossil Gas",
+            "money amount": 119,
+            "task_type": "pay bill",
+            "company address": "133 First Street, Harper Valley, California, 39028"
+        }
+    ]
+}

@@ -1,0 +1,62 @@
+{
+    "agent": {
+        "arrival_time_ms": 1584312902961,
+        "hangup_time_ms": 1584312997101,
+        "metadata": {
+            "agent_name": "John"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584312955211,
+                "data": {
+                    "task_type": "reset password",
+                    "phone": "403-850-4150"
+                }
+            }
+        ],
+        "speaker_id": 5,
+        "survey_response": {
+            "submit_time_ms": 1584312995010,
+            "data": {
+                "partner_rating": "10",
+                "ease_of_connection": "10"
+            }
+        }
+    },
+    "caller": {
+        "arrival_time_ms": 1584312901355,
+        "hangup_time_ms": 1584312994657,
+        "metadata": {
+            "first and last name": "Linda Garcia"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584312962846
+            }
+        ],
+        "speaker_id": 22,
+        "survey_response": {
+            "submit_time_ms": 1584313000094,
+            "data": {
+                "partner_rating": "10",
+                "ease_of_connection": "10"
+            }
+        }
+    },
+    "end_time_ms": 1584312994505,
+    "sid": "feb82e86eb764d7f",
+    "start_time_ms": 1584312908915,
+    "labels": {
+        "caller_mos": 5.0,
+        "lhvb_script": 5.0,
+        "agent_mos": 5.0
+    },
+    "session": "Little Harper Valley 1",
+    "tasks": [
+        {
+            "password dest": "phone",
+            "task_type": "reset password",
+            "phone": "403-850-4150"
+        }
+    ]
+}

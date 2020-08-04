@@ -1,0 +1,65 @@
+{
+    "agent": {
+        "arrival_time_ms": 1591057831219,
+        "hangup_time_ms": 1591057917567,
+        "metadata": {
+            "agent_name": "Michael"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1591057897011,
+                "data": {
+                    "company name": "Fossil Gas",
+                    "money amount": "109",
+                    "task_type": "pay bill",
+                    "company address": "805 Main Street Harper Valley Oregon 46375"
+                }
+            }
+        ],
+        "speaker_id": 44,
+        "survey_response": {
+            "submit_time_ms": 1591057910915,
+            "data": {
+                "partner_rating": "10",
+                "ease_of_connection": "10"
+            }
+        }
+    },
+    "caller": {
+        "arrival_time_ms": 1591057821829,
+        "hangup_time_ms": 1591057912027,
+        "metadata": {
+            "first and last name": "Robert Wilson"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1591057902862
+            }
+        ],
+        "speaker_id": 22,
+        "survey_response": {
+            "submit_time_ms": 1591057909947,
+            "data": {
+                "partner_rating": "10",
+                "ease_of_connection": "10"
+            }
+        }
+    },
+    "end_time_ms": 1591057911821,
+    "sid": "6f2b04cc057f4af1",
+    "start_time_ms": 1591057837110,
+    "labels": {
+        "caller_mos": 5.0,
+        "lhvb_script": 5.0,
+        "agent_mos": 5.0
+    },
+    "session": "Little Harper Valley 3",
+    "tasks": [
+        {
+            "company name": "Fossil Gas",
+            "money amount": 109,
+            "task_type": "pay bill",
+            "company address": "805 Main Street, Harper Valley, Oregon, 46375"
+        }
+    ]
+}

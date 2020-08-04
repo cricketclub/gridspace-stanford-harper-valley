@@ -1,0 +1,66 @@
+{
+    "agent": {
+        "arrival_time_ms": 1584314648314,
+        "hangup_time_ms": 1584314724375,
+        "metadata": {
+            "agent_name": "Linda"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584314694200,
+                "data": {
+                    "transfer source account": "savings",
+                    "transfer amount": "113",
+                    "transfer destination account": "checking",
+                    "task_type": "transfer money"
+                }
+            }
+        ],
+        "speaker_id": 52,
+        "survey_response": {
+            "submit_time_ms": 1584314724724,
+            "data": {
+                "partner_rating": "10",
+                "additional_comments": "As Customer: Problem with the given text to read: there is no way to end the conversation, after Agent asks if there is anything else to help with, and again the Customer should say good-bye.",
+                "ease_of_connection": "8"
+            }
+        }
+    },
+    "caller": {
+        "arrival_time_ms": 1584314647933,
+        "hangup_time_ms": 1584314717477,
+        "metadata": {
+            "first and last name": "Linda Wilson"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584314709921
+            }
+        ],
+        "speaker_id": 44,
+        "survey_response": {
+            "submit_time_ms": 1584314713451,
+            "data": {
+                "partner_rating": "10",
+                "ease_of_connection": "10"
+            }
+        }
+    },
+    "end_time_ms": 1584314717340,
+    "sid": "f56a927ba1f643f7",
+    "start_time_ms": 1584314654270,
+    "labels": {
+        "caller_mos": 3.0,
+        "lhvb_script": 5.0,
+        "agent_mos": 5.0
+    },
+    "session": "Little Harper Valley 1",
+    "tasks": [
+        {
+            "transfer source account": "savings",
+            "transfer amount": 113,
+            "task_type": "transfer money",
+            "transfer destination account": "checking"
+        }
+    ]
+}

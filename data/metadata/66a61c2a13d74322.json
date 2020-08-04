@@ -1,0 +1,62 @@
+{
+    "agent": {
+        "arrival_time_ms": 1590863743462,
+        "hangup_time_ms": 1590863820056,
+        "metadata": {
+            "agent_name": "Linda"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1590863792208,
+                "data": {
+                    "transfer source account": "checking",
+                    "transfer amount": "122",
+                    "transfer destination account": "savings",
+                    "task_type": "transfer money"
+                }
+            }
+        ],
+        "speaker_id": 3,
+        "survey_response": {
+            "submit_time_ms": 1590863814704,
+            "data": {
+                "partner_rating": "10",
+                "ease_of_connection": "10"
+            }
+        }
+    },
+    "caller": {
+        "arrival_time_ms": 1590863739716,
+        "hangup_time_ms": 1590863819344,
+        "metadata": {
+            "first and last name": "Linda Wilson"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1590863798746
+            }
+        ],
+        "speaker_id": 29,
+        "survey_response": {
+            "submit_time_ms": 1590863813060,
+            "data": {}
+        }
+    },
+    "end_time_ms": 1590863819201,
+    "sid": "66a61c2a13d74322",
+    "start_time_ms": 1590863749495,
+    "labels": {
+        "caller_mos": 3.0,
+        "lhvb_script": 5.0,
+        "agent_mos": 5.0
+    },
+    "session": "Little Harper Valley 2",
+    "tasks": [
+        {
+            "transfer source account": "checking",
+            "transfer amount": 122,
+            "task_type": "transfer money",
+            "transfer destination account": "savings"
+        }
+    ]
+}

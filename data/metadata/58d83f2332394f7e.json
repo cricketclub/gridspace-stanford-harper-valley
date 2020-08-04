@@ -1,0 +1,62 @@
+{
+    "agent": {
+        "arrival_time_ms": 1591055337363,
+        "hangup_time_ms": 1591055395793,
+        "metadata": {
+            "agent_name": "James"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1591055379747,
+                "data": {
+                    "transfer source account": "checking",
+                    "transfer amount": "134",
+                    "transfer destination account": "savings",
+                    "task_type": "transfer money"
+                }
+            }
+        ],
+        "speaker_id": 15,
+        "survey_response": {
+            "submit_time_ms": 1591055394327,
+            "data": {}
+        }
+    },
+    "caller": {
+        "arrival_time_ms": 1591055336434,
+        "hangup_time_ms": 1591055393128,
+        "metadata": {
+            "first and last name": "James Garcia"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1591055388422
+            }
+        ],
+        "speaker_id": 17,
+        "survey_response": {
+            "submit_time_ms": 1591055395221,
+            "data": {
+                "partner_rating": "10",
+                "ease_of_connection": "10"
+            }
+        }
+    },
+    "end_time_ms": 1591055392985,
+    "sid": "58d83f2332394f7e",
+    "start_time_ms": 1591055343315,
+    "labels": {
+        "caller_mos": 4.0,
+        "lhvb_script": 4.0,
+        "agent_mos": 3.0
+    },
+    "session": "Little Harper Valley 3",
+    "tasks": [
+        {
+            "transfer source account": "checking",
+            "transfer amount": 134,
+            "task_type": "transfer money",
+            "transfer destination account": "savings"
+        }
+    ]
+}

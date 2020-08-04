@@ -1,0 +1,76 @@
+{
+    "agent": {
+        "arrival_time_ms": 1584309977600,
+        "hangup_time_ms": 1584310058912,
+        "metadata": {
+            "agent_name": "Patricia"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584310006778,
+                "data": {
+                    "task_type": "check balance",
+                    "balance check account type": "savings"
+                }
+            },
+            {
+                "submit_time_ms": 1584310040830,
+                "data": {
+                    "task_type": "check balance",
+                    "balance check account type": "savings"
+                }
+            },
+            {
+                "submit_time_ms": 1584310040862,
+                "data": {
+                    "task_type": "check balance",
+                    "balance check account type": "savings"
+                }
+            }
+        ],
+        "speaker_id": 44,
+        "survey_response": {
+            "submit_time_ms": 1584310019949,
+            "data": {
+                "partner_rating": "10",
+                "ease_of_connection": "10"
+            }
+        }
+    },
+    "caller": {
+        "arrival_time_ms": 1584309977301,
+        "hangup_time_ms": 1584310024049,
+        "metadata": {
+            "first and last name": "John Garcia"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584310011196
+            }
+        ],
+        "speaker_id": 47,
+        "survey_response": {
+            "submit_time_ms": 1584310026875,
+            "data": {
+                "partner_rating": "10",
+                "ease_of_connection": "10"
+            }
+        }
+    },
+    "end_time_ms": 1584310023809,
+    "sid": "23faee2c12f047d4",
+    "start_time_ms": 1584309983517,
+    "labels": {
+        "caller_mos": 4.0,
+        "lhvb_script": 4.0,
+        "agent_mos": 4.0
+    },
+    "session": "Little Harper Valley 1",
+    "tasks": [
+        {
+            "task_type": "check balance",
+            "balance check account type": "savings",
+            "account balance": 61
+        }
+    ]
+}

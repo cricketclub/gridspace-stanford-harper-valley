@@ -1,0 +1,60 @@
+{
+    "agent": {
+        "arrival_time_ms": 1584312975969,
+        "hangup_time_ms": 1584313039503,
+        "metadata": {
+            "agent_name": "Jennifer"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584313018675,
+                "data": {
+                    "replacement card type": "debit",
+                    "task_type": "replace card"
+                }
+            }
+        ],
+        "speaker_id": 11,
+        "survey_response": {
+            "submit_time_ms": 1584313043744,
+            "data": {
+                "partner_rating": "10",
+                "ease_of_connection": "10"
+            }
+        }
+    },
+    "caller": {
+        "arrival_time_ms": 1584312973472,
+        "hangup_time_ms": 1584313036883,
+        "metadata": {
+            "first and last name": "Linda Davis"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584313026118
+            }
+        ],
+        "speaker_id": 6,
+        "survey_response": {
+            "submit_time_ms": 1584313035278,
+            "data": {}
+        }
+    },
+    "end_time_ms": 1584313036759,
+    "sid": "faf99f6f141845d2",
+    "start_time_ms": 1584312981909,
+    "labels": {
+        "caller_mos": 4.0,
+        "lhvb_script": 4.0,
+        "agent_mos": 4.0
+    },
+    "session": "Little Harper Valley 1",
+    "tasks": [
+        {
+            "transfer source account": "savings",
+            "transfer amount": 65,
+            "task_type": "transfer money",
+            "transfer destination account": "checking"
+        }
+    ]
+}

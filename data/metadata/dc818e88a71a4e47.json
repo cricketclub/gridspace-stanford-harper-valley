@@ -1,0 +1,66 @@
+{
+    "agent": {
+        "arrival_time_ms": 1584313939415,
+        "hangup_time_ms": 1584314010469,
+        "metadata": {
+            "agent_name": "James"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584313987942,
+                "data": {
+                    "transfer source account": "savings",
+                    "transfer amount": "108",
+                    "transfer destination account": "checking",
+                    "task_type": "transfer money"
+                }
+            }
+        ],
+        "speaker_id": 52,
+        "survey_response": {
+            "submit_time_ms": 1584314052076,
+            "data": {
+                "partner_rating": "10",
+                "additional_comments": "The text provided for \"transfer between accounts\" doesn't match the questions provided to the agent, who is told to ask those questions separately.",
+                "ease_of_connection": "8"
+            }
+        }
+    },
+    "caller": {
+        "arrival_time_ms": 1584313935260,
+        "hangup_time_ms": 1584314007960,
+        "metadata": {
+            "first and last name": "David Rodriguez"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584313996367
+            }
+        ],
+        "speaker_id": 11,
+        "survey_response": {
+            "submit_time_ms": 1584314014437,
+            "data": {
+                "partner_rating": "10",
+                "ease_of_connection": "10"
+            }
+        }
+    },
+    "end_time_ms": 1584314007680,
+    "sid": "dc818e88a71a4e47",
+    "start_time_ms": 1584313945344,
+    "labels": {
+        "caller_mos": 3.0,
+        "lhvb_script": 5.0,
+        "agent_mos": 5.0
+    },
+    "session": "Little Harper Valley 1",
+    "tasks": [
+        {
+            "transfer source account": "savings",
+            "transfer amount": 108,
+            "task_type": "transfer money",
+            "transfer destination account": "checking"
+        }
+    ]
+}

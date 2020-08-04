@@ -1,0 +1,65 @@
+{
+    "agent": {
+        "arrival_time_ms": 1584309819645,
+        "hangup_time_ms": 1584309893323,
+        "metadata": {
+            "agent_name": "Mary"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584309875584,
+                "data": {
+                    "company name": "Fossil Gas",
+                    "money amount": "144",
+                    "task_type": "pay bill",
+                    "company address": "656 Main Street Forest Ranch CA 22362"
+                }
+            }
+        ],
+        "speaker_id": 44,
+        "survey_response": {
+            "submit_time_ms": 1584309888749,
+            "data": {
+                "partner_rating": "10",
+                "ease_of_connection": "10"
+            }
+        }
+    },
+    "caller": {
+        "arrival_time_ms": 1584309818371,
+        "hangup_time_ms": 1584309892343,
+        "metadata": {
+            "first and last name": "Patricia Rodriguez"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584309877265
+            }
+        ],
+        "speaker_id": 7,
+        "survey_response": {
+            "submit_time_ms": 1584309897183,
+            "data": {
+                "partner_rating": "10",
+                "ease_of_connection": "10"
+            }
+        }
+    },
+    "end_time_ms": 1584309892177,
+    "sid": "fb6437545dd94223",
+    "start_time_ms": 1584309825561,
+    "labels": {
+        "caller_mos": 5.0,
+        "lhvb_script": 5.0,
+        "agent_mos": 5.0
+    },
+    "session": "Little Harper Valley 1",
+    "tasks": [
+        {
+            "company name": "Fossil Gas",
+            "money amount": 144,
+            "task_type": "pay bill",
+            "company address": "656 Main Street, Forest Ranch, California, 22362"
+        }
+    ]
+}

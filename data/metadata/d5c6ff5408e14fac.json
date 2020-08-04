@@ -1,0 +1,65 @@
+{
+    "agent": {
+        "arrival_time_ms": 1591056523749,
+        "hangup_time_ms": 1591056602719,
+        "metadata": {
+            "agent_name": "Mary"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1591056582201,
+                "data": {
+                    "company name": "Smart Electric",
+                    "money amount": "70",
+                    "task_type": "pay bill",
+                    "company address": "948 Main Street Harper Valley Oregon 46252"
+                }
+            }
+        ],
+        "speaker_id": 44,
+        "survey_response": {
+            "submit_time_ms": 1591056594089,
+            "data": {
+                "partner_rating": "10",
+                "ease_of_connection": "10"
+            }
+        }
+    },
+    "caller": {
+        "arrival_time_ms": 1591056515311,
+        "hangup_time_ms": 1591056596961,
+        "metadata": {
+            "first and last name": "Elizabeth Smith"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1591056587971
+            }
+        ],
+        "speaker_id": 17,
+        "survey_response": {
+            "submit_time_ms": 1591056599244,
+            "data": {
+                "partner_rating": "10",
+                "ease_of_connection": "10"
+            }
+        }
+    },
+    "end_time_ms": 1591056596834,
+    "sid": "d5c6ff5408e14fac",
+    "start_time_ms": 1591056529678,
+    "labels": {
+        "caller_mos": 3.0,
+        "lhvb_script": 5.0,
+        "agent_mos": 4.0
+    },
+    "session": "Little Harper Valley 3",
+    "tasks": [
+        {
+            "company name": "Smart Electic",
+            "money amount": 70,
+            "task_type": "pay bill",
+            "company address": "948 Main Street, Harper Valley, Oregon, 46252"
+        }
+    ]
+}
