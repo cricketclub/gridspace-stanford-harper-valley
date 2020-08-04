@@ -1,0 +1,66 @@
+{
+    "agent": {
+        "arrival_time_ms": 1591055673142,
+        "hangup_time_ms": 1591055755609,
+        "metadata": {
+            "agent_name": "Patricia"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1591055733568,
+                "data": {
+                    "money amount": "68",
+                    "task_type": "pay bill",
+                    "company name": "Fossil Gas",
+                    "company address": "631 Main St Forest Ranch Oregon 71640"
+                }
+            }
+        ],
+        "speaker_id": 44,
+        "survey_response": {
+            "submit_time_ms": 1591055747505,
+            "data": {
+                "ease_of_connection": "10",
+                "partner_rating": "10"
+            }
+        }
+    },
+    "caller": {
+        "arrival_time_ms": 1591055662421,
+        "hangup_time_ms": 1591055756628,
+        "metadata": {
+            "first and last name": "Robert Johnson"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1591055748652
+            }
+        ],
+        "speaker_id": 45,
+        "survey_response": {
+            "submit_time_ms": 1591055776061,
+            "data": {
+                "partner_rating": "10",
+                "ease_of_connection": "10",
+                "additional_comments": "The script seems incomplete. Am I allowed to say that is all I need. Can I say good bye?"
+            }
+        }
+    },
+    "end_time_ms": 1591055755491,
+    "sid": "314af395d31241f2",
+    "start_time_ms": 1591055679083,
+    "labels": {
+        "lhvb_script": 4.0,
+        "agent_mos": 3.0,
+        "caller_mos": 4.0
+    },
+    "session": "Little Harper Valley 3",
+    "tasks": [
+        {
+            "money amount": 68,
+            "task_type": "pay bill",
+            "company name": "Fossil Gas",
+            "company address": "631 Main Street, Forest Ranch, Oregon, 71640"
+        }
+    ]
+}

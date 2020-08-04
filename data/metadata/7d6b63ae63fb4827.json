@@ -1,0 +1,65 @@
+{
+    "agent": {
+        "arrival_time_ms": 1584310611848,
+        "hangup_time_ms": 1584310678761,
+        "metadata": {
+            "agent_name": "Robert"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584310656811,
+                "data": {
+                    "transfer amount": "91",
+                    "task_type": "transfer money",
+                    "transfer source account": "savings",
+                    "transfer destination account": "checking"
+                }
+            }
+        ],
+        "speaker_id": 44,
+        "survey_response": {
+            "submit_time_ms": 1584310675198,
+            "data": {
+                "ease_of_connection": "10",
+                "partner_rating": "10"
+            }
+        }
+    },
+    "caller": {
+        "arrival_time_ms": 1584310602250,
+        "hangup_time_ms": 1584310678096,
+        "metadata": {
+            "first and last name": "John Johnson"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584310665236
+            }
+        ],
+        "speaker_id": 47,
+        "survey_response": {
+            "submit_time_ms": 1584310678963,
+            "data": {
+                "ease_of_connection": "10",
+                "partner_rating": "10"
+            }
+        }
+    },
+    "end_time_ms": 1584310677933,
+    "sid": "7d6b63ae63fb4827",
+    "start_time_ms": 1584310617778,
+    "labels": {
+        "lhvb_script": 5.0,
+        "agent_mos": 5.0,
+        "caller_mos": 5.0
+    },
+    "session": "Little Harper Valley 1",
+    "tasks": [
+        {
+            "transfer amount": 91,
+            "task_type": "transfer money",
+            "transfer source account": "savings",
+            "transfer destination account": "checking"
+        }
+    ]
+}

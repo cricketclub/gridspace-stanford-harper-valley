@@ -1,0 +1,66 @@
+{
+    "agent": {
+        "arrival_time_ms": 1591054268434,
+        "hangup_time_ms": 1591054350637,
+        "metadata": {
+            "agent_name": "Jennifer"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1591054345523,
+                "data": {
+                    "transfer amount": "147.00",
+                    "task_type": "transfer money",
+                    "transfer source account": "savings",
+                    "transfer destination account": "checking"
+                }
+            }
+        ],
+        "speaker_id": 60,
+        "survey_response": {
+            "submit_time_ms": 1591054484460,
+            "data": {
+                "ease_of_connection": "10",
+                "partner_rating": "10",
+                "additional_comments": "I missed the \"repeat\" request in the beginning of the script. It would be nice to be able to view an example script before starting these calls to familiarize ourselves with what we need to do. Thanks"
+            }
+        }
+    },
+    "caller": {
+        "arrival_time_ms": 1591054261945,
+        "hangup_time_ms": 1591054345860,
+        "metadata": {
+            "first and last name": "Jennifer Jones"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1591054338505
+            }
+        ],
+        "speaker_id": 22,
+        "survey_response": {
+            "submit_time_ms": 1591054350236,
+            "data": {
+                "partner_rating": "10",
+                "ease_of_connection": "10"
+            }
+        }
+    },
+    "end_time_ms": 1591054345704,
+    "sid": "8ec3fc323a7a4764",
+    "start_time_ms": 1591054274413,
+    "labels": {
+        "lhvb_script": 5.0,
+        "agent_mos": 5.0,
+        "caller_mos": 4.0
+    },
+    "session": "Little Harper Valley 3",
+    "tasks": [
+        {
+            "transfer amount": 147,
+            "task_type": "transfer money",
+            "transfer source account": "savings",
+            "transfer destination account": "checking"
+        }
+    ]
+}

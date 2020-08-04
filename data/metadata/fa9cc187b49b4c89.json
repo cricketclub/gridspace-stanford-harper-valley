@@ -1,0 +1,75 @@
+{
+    "agent": {
+        "arrival_time_ms": 1584309979826,
+        "hangup_time_ms": 1584310051898,
+        "metadata": {
+            "agent_name": "Jennifer"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584310039782,
+                "data": {
+                    "transfer amount": "66.00",
+                    "task_type": "transfer money",
+                    "transfer source account": "checking",
+                    "transfer destination account": "savings"
+                }
+            },
+            {
+                "submit_time_ms": 1584310069432,
+                "data": {
+                    "transfer amount": "66.00",
+                    "task_type": "transfer money",
+                    "transfer source account": "checking",
+                    "transfer destination account": "savings"
+                }
+            }
+        ],
+        "speaker_id": 8,
+        "survey_response": {
+            "submit_time_ms": 1584310112717,
+            "data": {
+                "partner_rating": "10",
+                "ease_of_connection": "10",
+                "additional_comments": ""
+            }
+        }
+    },
+    "caller": {
+        "arrival_time_ms": 1584309977839,
+        "hangup_time_ms": null,
+        "metadata": {
+            "first and last name": "Robert Wilson"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584310049460
+            }
+        ],
+        "speaker_id": 29,
+        "survey_response": {
+            "submit_time_ms": 1584310057045,
+            "data": {
+                "partner_rating": "7",
+                "ease_of_connection": "10"
+            }
+        }
+    },
+    "end_time_ms": 1584310051757,
+    "sid": "fa9cc187b49b4c89",
+    "start_time_ms": 1584309985700,
+    "labels": {
+        "lhvb_script": 4.0,
+        "agent_mos": 4.0,
+        "caller_mos": 4.0
+    },
+    "session": "Little Harper Valley 1",
+    "tasks": [
+        {
+            "transfer amount": 66,
+            "task_type": "transfer money",
+            "transfer source account": "checking",
+            "transfer destination account": "savings"
+        }
+    ]
+}

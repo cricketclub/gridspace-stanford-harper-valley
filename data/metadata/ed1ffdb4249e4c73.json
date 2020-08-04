@@ -1,0 +1,56 @@
+{
+    "agent": {
+        "arrival_time_ms": 1591056509061,
+        "hangup_time_ms": 1591056565609,
+        "metadata": {
+            "agent_name": "John"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1591056547368,
+                "data": {
+                    "task_type": "check balance",
+                    "balance check account type": "savings"
+                }
+            }
+        ],
+        "speaker_id": 40,
+        "survey_response": {
+            "submit_time_ms": 1591056568810,
+            "data": {}
+        }
+    },
+    "caller": {
+        "arrival_time_ms": 1591056494463,
+        "hangup_time_ms": 1591056563841,
+        "metadata": {
+            "first and last name": "Patricia Smith"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1591056552214
+            }
+        ],
+        "speaker_id": 15,
+        "survey_response": {
+            "submit_time_ms": 1591056559855,
+            "data": {}
+        }
+    },
+    "end_time_ms": 1591056563693,
+    "sid": "ed1ffdb4249e4c73",
+    "start_time_ms": 1591056520943,
+    "labels": {
+        "lhvb_script": 5.0,
+        "agent_mos": 5.0,
+        "caller_mos": 5.0
+    },
+    "session": "Little Harper Valley 3",
+    "tasks": [
+        {
+            "task_type": "check balance",
+            "account balance": 64,
+            "balance check account type": "savings"
+        }
+    ]
+}

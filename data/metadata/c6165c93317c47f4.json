@@ -1,0 +1,53 @@
+{
+    "agent": {
+        "arrival_time_ms": 1591055621688,
+        "hangup_time_ms": 1591055690290,
+        "metadata": {
+            "agent_name": "John"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1591055684434,
+                "data": {
+                    "task_type": "reset password",
+                    "phone": "5451509588"
+                }
+            }
+        ],
+        "speaker_id": 59,
+        "survey_response": null
+    },
+    "caller": {
+        "arrival_time_ms": 1591055620137,
+        "hangup_time_ms": 1591055681687,
+        "metadata": {
+            "first and last name": "Patricia Garcia"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1591055675002
+            }
+        ],
+        "speaker_id": 6,
+        "survey_response": {
+            "submit_time_ms": 1591055679663,
+            "data": {}
+        }
+    },
+    "end_time_ms": 1591055681587,
+    "sid": "c6165c93317c47f4",
+    "start_time_ms": 1591055627632,
+    "labels": {
+        "lhvb_script": 4.0,
+        "agent_mos": 3.0,
+        "caller_mos": 5.0
+    },
+    "session": "Little Harper Valley 3",
+    "tasks": [
+        {
+            "task_type": "reset password",
+            "password dest": "phone",
+            "phone": "545-150-9588"
+        }
+    ]
+}

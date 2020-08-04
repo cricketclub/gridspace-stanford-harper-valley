@@ -1,0 +1,62 @@
+{
+    "agent": {
+        "arrival_time_ms": 1591057987829,
+        "hangup_time_ms": 1591058085281,
+        "metadata": {
+            "agent_name": "John"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1591058064866,
+                "data": {
+                    "money amount": "123",
+                    "task_type": "pay bill",
+                    "company name": "Smart Electric",
+                    "company address": "101 First St. Harper Valley, Oregon 59954"
+                }
+            }
+        ],
+        "speaker_id": 40,
+        "survey_response": {
+            "submit_time_ms": 1591058087753,
+            "data": {}
+        }
+    },
+    "caller": {
+        "arrival_time_ms": 1591057954697,
+        "hangup_time_ms": 1591058086945,
+        "metadata": {
+            "first and last name": "Robert Rodriguez"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1591058074281
+            }
+        ],
+        "speaker_id": 47,
+        "survey_response": {
+            "submit_time_ms": 1591058081191,
+            "data": {
+                "partner_rating": "10",
+                "ease_of_connection": "10"
+            }
+        }
+    },
+    "end_time_ms": 1591058085120,
+    "sid": "9e5db65a113841d8",
+    "start_time_ms": 1591057993981,
+    "labels": {
+        "lhvb_script": 5.0,
+        "agent_mos": 5.0,
+        "caller_mos": 5.0
+    },
+    "session": "Little Harper Valley 3",
+    "tasks": [
+        {
+            "money amount": 123,
+            "task_type": "pay bill",
+            "company name": "Smart Electic",
+            "company address": "101 First Street, Harper Valley, Oregon, 59954"
+        }
+    ]
+}

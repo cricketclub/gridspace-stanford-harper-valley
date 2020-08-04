@@ -1,0 +1,62 @@
+{
+    "agent": {
+        "arrival_time_ms": 1584314222850,
+        "hangup_time_ms": 1584314277782,
+        "metadata": {
+            "agent_name": "Robert"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584314259897,
+                "data": {
+                    "task_type": "reset password",
+                    "phone": "655-077-5475"
+                }
+            }
+        ],
+        "speaker_id": 30,
+        "survey_response": {
+            "submit_time_ms": 1584314279654,
+            "data": {
+                "partner_rating": "10",
+                "ease_of_connection": "10"
+            }
+        }
+    },
+    "caller": {
+        "arrival_time_ms": 1584314222518,
+        "hangup_time_ms": 1584314275631,
+        "metadata": {
+            "first and last name": "Elizabeth Johnson"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584314265853
+            }
+        ],
+        "speaker_id": 47,
+        "survey_response": {
+            "submit_time_ms": 1584314272997,
+            "data": {
+                "ease_of_connection": "10",
+                "partner_rating": "10"
+            }
+        }
+    },
+    "end_time_ms": 1584314275485,
+    "sid": "64064f143ab24985",
+    "start_time_ms": 1584314228866,
+    "labels": {
+        "lhvb_script": 5.0,
+        "agent_mos": 5.0,
+        "caller_mos": 5.0
+    },
+    "session": "Little Harper Valley 1",
+    "tasks": [
+        {
+            "task_type": "reset password",
+            "password dest": "phone",
+            "phone": "655-077-5475"
+        }
+    ]
+}

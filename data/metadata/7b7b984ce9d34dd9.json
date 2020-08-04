@@ -1,0 +1,66 @@
+{
+    "agent": {
+        "arrival_time_ms": 1584311059766,
+        "hangup_time_ms": 1584311198194,
+        "metadata": {
+            "agent_name": "James"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584311170253,
+                "data": {
+                    "money amount": "$104",
+                    "task_type": "pay bill",
+                    "company name": "Fossil Gas",
+                    "company address": "059 Main Street, Harper Valley, CA 93548"
+                }
+            }
+        ],
+        "speaker_id": 23,
+        "survey_response": {
+            "submit_time_ms": 1584311250079,
+            "data": {
+                "ease_of_connection": "7",
+                "partner_rating": "10",
+                "additional_comments": "there was a little big of lag, so sometimes we talked over each other by accident"
+            }
+        }
+    },
+    "caller": {
+        "arrival_time_ms": 1584311056458,
+        "hangup_time_ms": 1584311195725,
+        "metadata": {
+            "first and last name": "Elizabeth Johnson"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584311177554
+            }
+        ],
+        "speaker_id": 20,
+        "survey_response": {
+            "submit_time_ms": 1584311200613,
+            "data": {
+                "ease_of_connection": "10",
+                "partner_rating": "5"
+            }
+        }
+    },
+    "end_time_ms": 1584311195538,
+    "sid": "7b7b984ce9d34dd9",
+    "start_time_ms": 1584311065727,
+    "labels": {
+        "lhvb_script": 5.0,
+        "agent_mos": 5.0,
+        "caller_mos": 5.0
+    },
+    "session": "Little Harper Valley 1",
+    "tasks": [
+        {
+            "money amount": 104,
+            "task_type": "pay bill",
+            "company name": "Fossil Gas",
+            "company address": "059 Main Street, Harper Valley, California, 93548"
+        }
+    ]
+}

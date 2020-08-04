@@ -1,0 +1,62 @@
+{
+    "agent": {
+        "arrival_time_ms": 1590858227415,
+        "hangup_time_ms": 1590858335412,
+        "metadata": {
+            "agent_name": "David"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1590858323671,
+                "data": {
+                    "money amount": "$90.00",
+                    "task_type": "pay bill",
+                    "company name": "Smart Electric",
+                    "company address": "021 Main Street Harper Valley California 23375"
+                }
+            }
+        ],
+        "speaker_id": 45,
+        "survey_response": {
+            "submit_time_ms": 1590858357862,
+            "data": {
+                "ease_of_connection": "10",
+                "partner_rating": "10"
+            }
+        }
+    },
+    "caller": {
+        "arrival_time_ms": 1590858216253,
+        "hangup_time_ms": 1590858327161,
+        "metadata": {
+            "first and last name": "Jennifer Brown"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1590858322235
+            }
+        ],
+        "speaker_id": 6,
+        "survey_response": {
+            "submit_time_ms": 1590858324649,
+            "data": {}
+        }
+    },
+    "end_time_ms": 1590858327001,
+    "sid": "18f42b7f472c4587",
+    "start_time_ms": 1590858233316,
+    "labels": {
+        "lhvb_script": 5.0,
+        "agent_mos": 5.0,
+        "caller_mos": 5.0
+    },
+    "session": "Little Harper Valley 2",
+    "tasks": [
+        {
+            "money amount": 90,
+            "task_type": "pay bill",
+            "company name": "Smart Electic",
+            "company address": "021 Main Street, Harper Valley, California, 23375"
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+{
+    "agent": {
+        "arrival_time_ms": 1590858364642,
+        "hangup_time_ms": 1590858391908,
+        "metadata": {
+            "agent_name": "Elizabeth"
+        },
+        "responses": [],
+        "speaker_id": 41,
+        "survey_response": null
+    },
+    "caller": {
+        "arrival_time_ms": 1590858362575,
+        "hangup_time_ms": 1590858424080,
+        "metadata": {
+            "first and last name": "Elizabeth Davis"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1590858422103
+            }
+        ],
+        "speaker_id": 6,
+        "survey_response": {
+            "submit_time_ms": 1590858438310,
+            "data": {
+                "additional_comments": "the agent didn't respond after I asked for the branch hours"
+            }
+        }
+    },
+    "end_time_ms": 1590858391788,
+    "sid": "1ba998d93a404df6",
+    "start_time_ms": 1590858370570,
+    "labels": {
+        "lhvb_script": 5.0,
+        "agent_mos": 3.0,
+        "caller_mos": 4.0
+    },
+    "session": "Little Harper Valley 2",
+    "tasks": [
+        {
+            "branch hours": "8:30 am to 5:00 pm",
+            "task_type": "get branch hours"
+        }
+    ]
+}

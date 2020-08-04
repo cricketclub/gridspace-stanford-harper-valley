@@ -1,0 +1,66 @@
+{
+    "agent": {
+        "arrival_time_ms": 1584311930851,
+        "hangup_time_ms": 1584311981658,
+        "metadata": {
+            "agent_name": "James"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584311969294,
+                "data": {
+                    "transfer amount": "96.00",
+                    "task_type": "transfer money",
+                    "transfer source account": "checking",
+                    "transfer destination account": "checking"
+                }
+            }
+        ],
+        "speaker_id": 20,
+        "survey_response": {
+            "submit_time_ms": 1584311993936,
+            "data": {
+                "ease_of_connection": "8",
+                "partner_rating": "1"
+            }
+        }
+    },
+    "caller": {
+        "arrival_time_ms": 1584311923370,
+        "hangup_time_ms": 1584311984125,
+        "metadata": {
+            "first and last name": "Robert Brown"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584311987304
+            }
+        ],
+        "speaker_id": 25,
+        "survey_response": {
+            "submit_time_ms": 1584312029281,
+            "data": {
+                "ease_of_connection": "8",
+                "partner_rating": "8",
+                "additional_comments": "The caller didn\u2019t say thank you and can I do anything else for you."
+            }
+        }
+    },
+    "end_time_ms": 1584311981462,
+    "sid": "23bd29bf2d174086",
+    "start_time_ms": 1584311936819,
+    "labels": {
+        "lhvb_script": 4.0,
+        "agent_mos": 4.0,
+        "caller_mos": 4.0
+    },
+    "session": "Little Harper Valley 1",
+    "tasks": [
+        {
+            "transfer amount": 96,
+            "task_type": "transfer money",
+            "transfer source account": "checking",
+            "transfer destination account": "savings"
+        }
+    ]
+}

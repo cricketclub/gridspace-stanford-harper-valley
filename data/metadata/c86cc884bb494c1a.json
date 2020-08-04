@@ -1,0 +1,63 @@
+{
+    "agent": {
+        "arrival_time_ms": 1584314257242,
+        "hangup_time_ms": 1584314324131,
+        "metadata": {
+            "agent_name": "Michael"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584314306316,
+                "data": {
+                    "task_type": "schedule appointment",
+                    "day": "friday",
+                    "time": "8am"
+                }
+            }
+        ],
+        "speaker_id": 7,
+        "survey_response": {
+            "submit_time_ms": 1584314327369,
+            "data": {
+                "partner_rating": "10",
+                "ease_of_connection": "10"
+            }
+        }
+    },
+    "caller": {
+        "arrival_time_ms": 1584314256546,
+        "hangup_time_ms": 1584314325169,
+        "metadata": {
+            "first and last name": "John Johnson"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584314310180
+            }
+        ],
+        "speaker_id": 37,
+        "survey_response": {
+            "submit_time_ms": 1584314330921,
+            "data": {
+                "partner_rating": "7",
+                "ease_of_connection": "9"
+            }
+        }
+    },
+    "end_time_ms": 1584314324004,
+    "sid": "c86cc884bb494c1a",
+    "start_time_ms": 1584314263081,
+    "labels": {
+        "lhvb_script": 5.0,
+        "agent_mos": 3.0,
+        "caller_mos": 5.0
+    },
+    "session": "Little Harper Valley 1",
+    "tasks": [
+        {
+            "task_type": "schedule appointment",
+            "day": "Friday",
+            "time": "8:00 AM"
+        }
+    ]
+}

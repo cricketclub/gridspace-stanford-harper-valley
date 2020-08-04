@@ -1,0 +1,60 @@
+{
+    "agent": {
+        "arrival_time_ms": 1584313649488,
+        "hangup_time_ms": 1584313713235,
+        "metadata": {
+            "agent_name": "Michael"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584313693664,
+                "data": {
+                    "task_type": "schedule appointment",
+                    "day": "friday",
+                    "time": "815 am"
+                }
+            }
+        ],
+        "speaker_id": 52,
+        "survey_response": {
+            "submit_time_ms": 1584313725199,
+            "data": {
+                "additional_comments": "As Customer: Problem with the given text to read: there is no way to end the conversation, after Agent asks if there is anything else to help with, and again the Customer should say good-bye.",
+                "partner_rating": "10"
+            }
+        }
+    },
+    "caller": {
+        "arrival_time_ms": 1584313647751,
+        "hangup_time_ms": 1584313710842,
+        "metadata": {
+            "first and last name": "Elizabeth Wilson"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584313699228
+            }
+        ],
+        "speaker_id": 6,
+        "survey_response": {
+            "submit_time_ms": 1584313709363,
+            "data": {}
+        }
+    },
+    "end_time_ms": 1584313710673,
+    "sid": "bf9bbd2aec6149fc",
+    "start_time_ms": 1584313655414,
+    "labels": {
+        "lhvb_script": 5.0,
+        "agent_mos": 5.0,
+        "caller_mos": 4.0
+    },
+    "session": "Little Harper Valley 1",
+    "tasks": [
+        {
+            "task_type": "schedule appointment",
+            "day": "Friday",
+            "time": "8:15 AM"
+        }
+    ]
+}

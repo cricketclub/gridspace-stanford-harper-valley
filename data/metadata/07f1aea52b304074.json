@@ -1,0 +1,68 @@
+{
+    "agent": {
+        "arrival_time_ms": 1584311744678,
+        "hangup_time_ms": 1584311849451,
+        "metadata": {
+            "agent_name": "Mary"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584311821123,
+                "data": {
+                    "money amount": "$65",
+                    "task_type": "pay bill",
+                    "company name": "Fossil Gas",
+                    "company address": "029 Main Street - Forest Ranch, Oregon 34289"
+                }
+            }
+        ],
+        "speaker_id": 43,
+        "survey_response": {
+            "submit_time_ms": 1584311842242,
+            "data": {
+                "ease_of_connection": "10",
+                "partner_rating": "10"
+            }
+        }
+    },
+    "caller": {
+        "arrival_time_ms": 1584311728879,
+        "hangup_time_ms": null,
+        "metadata": {
+            "first and last name": "Patricia Williams"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584311850926
+            },
+            {
+                "submit_time_ms": 1584311855382
+            }
+        ],
+        "speaker_id": 54,
+        "survey_response": {
+            "submit_time_ms": 1584311859551,
+            "data": {
+                "ease_of_connection": "10",
+                "partner_rating": "10"
+            }
+        }
+    },
+    "end_time_ms": 1584311844748,
+    "sid": "07f1aea52b304074",
+    "start_time_ms": 1584311750634,
+    "labels": {
+        "lhvb_script": 5.0,
+        "agent_mos": 3.0,
+        "caller_mos": 3.0
+    },
+    "session": "Little Harper Valley 1",
+    "tasks": [
+        {
+            "money amount": 65,
+            "task_type": "pay bill",
+            "company name": "Fossil Gas",
+            "company address": "029 Main Street, Forest Ranch, Oregon, 34289"
+        }
+    ]
+}

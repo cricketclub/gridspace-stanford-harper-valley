@@ -1,0 +1,52 @@
+{
+    "agent": {
+        "arrival_time_ms": 1584313291174,
+        "hangup_time_ms": 1584313356420,
+        "metadata": {
+            "agent_name": "James"
+        },
+        "responses": [],
+        "speaker_id": 50,
+        "survey_response": {
+            "submit_time_ms": 1584313366089,
+            "data": {}
+        }
+    },
+    "caller": {
+        "arrival_time_ms": 1584313289743,
+        "hangup_time_ms": 1584313353803,
+        "metadata": {
+            "first and last name": "Mary Smith"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584313350177
+            }
+        ],
+        "speaker_id": 25,
+        "survey_response": {
+            "submit_time_ms": 1584313394944,
+            "data": {
+                "ease_of_connection": "8",
+                "partner_rating": "8",
+                "additional_comments": "caller didnt ask me what time i wanted an appointment at."
+            }
+        }
+    },
+    "end_time_ms": 1584313353579,
+    "sid": "b9f2e4b1237e4420",
+    "start_time_ms": 1584313297195,
+    "labels": {
+        "lhvb_script": 4.0,
+        "agent_mos": 4.0,
+        "caller_mos": 3.0
+    },
+    "session": "Little Harper Valley 1",
+    "tasks": [
+        {
+            "task_type": "schedule appointment",
+            "day": "Sunday",
+            "time": "11:15 AM"
+        }
+    ]
+}

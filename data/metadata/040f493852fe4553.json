@@ -1,0 +1,58 @@
+{
+    "agent": {
+        "arrival_time_ms": 1584312530422,
+        "hangup_time_ms": 1584312611988,
+        "metadata": {
+            "agent_name": "Patricia"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584312584818,
+                "data": {
+                    "transfer amount": "126.00",
+                    "task_type": "transfer money",
+                    "transfer source account": "savings",
+                    "transfer destination account": "checking"
+                }
+            }
+        ],
+        "speaker_id": 24,
+        "survey_response": null
+    },
+    "caller": {
+        "arrival_time_ms": 1584312527648,
+        "hangup_time_ms": 1584312619394,
+        "metadata": {
+            "first and last name": "Mary Smith"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584312596484
+            }
+        ],
+        "speaker_id": 52,
+        "survey_response": {
+            "submit_time_ms": 1584312617819,
+            "data": {
+                "partner_rating": "9"
+            }
+        }
+    },
+    "end_time_ms": 1584312611807,
+    "sid": "040f493852fe4553",
+    "start_time_ms": 1584312536676,
+    "labels": {
+        "lhvb_script": 5.0,
+        "agent_mos": 5.0,
+        "caller_mos": 5.0
+    },
+    "session": "Little Harper Valley 1",
+    "tasks": [
+        {
+            "transfer amount": 126,
+            "task_type": "transfer money",
+            "transfer source account": "savings",
+            "transfer destination account": "checking"
+        }
+    ]
+}

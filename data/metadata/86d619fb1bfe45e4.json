@@ -1,0 +1,70 @@
+{
+    "agent": {
+        "arrival_time_ms": 1584310217674,
+        "hangup_time_ms": 1584310288826,
+        "metadata": {
+            "agent_name": "David"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584310292344,
+                "data": {
+                    "task_type": "replace card",
+                    "replacement card type": "debit"
+                }
+            },
+            {
+                "submit_time_ms": 1584310302862,
+                "data": {
+                    "task_type": "replace card",
+                    "replacement card type": "debit"
+                }
+            }
+        ],
+        "speaker_id": 25,
+        "survey_response": {
+            "submit_time_ms": 1584310359521,
+            "data": {
+                "partner_rating": "10",
+                "ease_of_connection": "10",
+                "additional_comments": "The thing keeps saying change card, not working right."
+            }
+        }
+    },
+    "caller": {
+        "arrival_time_ms": 1584310216398,
+        "hangup_time_ms": 1584310286346,
+        "metadata": {
+            "first and last name": "James Miller"
+        },
+        "responses": [
+            {
+                "submit_time_ms": 1584310287602
+            }
+        ],
+        "speaker_id": 57,
+        "survey_response": {
+            "submit_time_ms": 1584310298205,
+            "data": {
+                "ease_of_connection": "10",
+                "partner_rating": "9"
+            }
+        }
+    },
+    "end_time_ms": 1584310286217,
+    "sid": "86d619fb1bfe45e4",
+    "start_time_ms": 1584310223665,
+    "labels": {
+        "lhvb_script": 4.0,
+        "agent_mos": 5.0,
+        "caller_mos": 5.0
+    },
+    "session": "Little Harper Valley 1",
+    "tasks": [
+        {
+            "task_type": "schedule appointment",
+            "day": "Sunday",
+            "time": "3:00 PM"
+        }
+    ]
+}
