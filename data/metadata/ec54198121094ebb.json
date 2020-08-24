@@ -9,9 +9,9 @@
             {
                 "submit_time_ms": 1584311810869,
                 "data": {
-                    "transfer source account": "savings",
-                    "transfer amount": "126",
                     "transfer destination account": "checking",
+                    "transfer amount": "126",
+                    "transfer source account": "savings",
                     "task_type": "transfer money"
                 }
             }
@@ -40,17 +40,17 @@
     "sid": "ec54198121094ebb",
     "start_time_ms": 1584311764494,
     "labels": {
-        "caller_mos": 5.0,
         "lhvb_script": 4.0,
+        "caller_mos": 5.0,
         "agent_mos": 5.0
     },
     "session": "Little Harper Valley 1",
     "tasks": [
         {
-            "transfer source account": "savings",
+            "transfer destination account": "checking",
             "transfer amount": 126,
-            "task_type": "transfer money",
-            "transfer destination account": "checking"
+            "transfer source account": "savings",
+            "task_type": "transfer money"
         }
     ]
 }

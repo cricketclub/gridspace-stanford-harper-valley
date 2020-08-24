@@ -1,12 +1,16 @@
 [
     {
         "channel_index": 2,
-        "duration_ms": 3870,
-        "emotion": [
-            0.012488213367760181,
-            0.2915266454219818,
-            0.6959851980209351
+        "dialog_acts": [
+            "gridspace_greeting",
+            "gridspace_open_question"
         ],
+        "duration_ms": 3870,
+        "emotion": {
+            "neutral": 0.2915266454219818,
+            "negative": 0.012488213367760181,
+            "positive": 0.6959851980209351
+        },
         "human_transcript": "hello this is harper valley national bank my name is patricia how can i help you today",
         "index": 1,
         "offset_ms": 4019,
@@ -55,12 +59,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 4470,
-        "emotion": [
-            0.1462596207857132,
-            0.379976749420166,
-            0.4737635850906372
+        "dialog_acts": [
+            "gridspace_greeting",
+            "gridspace_problem_description"
         ],
+        "duration_ms": 4470,
+        "emotion": {
+            "neutral": 0.379976749420166,
+            "negative": 0.1462596207857132,
+            "positive": 0.4737635850906372
+        },
         "human_transcript": "hi my name's michael johnson i need to check my account balance",
         "index": 2,
         "offset_ms": 10449,
@@ -99,12 +107,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 1290,
-        "emotion": [
-            0.1126379743218422,
-            0.4497878849506378,
-            0.437574177980423
+        "dialog_acts": [
+            "gridspace_bear_with_me"
         ],
+        "duration_ms": 1290,
+        "emotion": {
+            "neutral": 0.4497878849506378,
+            "negative": 0.1126379743218422,
+            "positive": 0.437574177980423
+        },
         "human_transcript": "okay one second please",
         "index": 3,
         "offset_ms": 17889,
@@ -127,12 +138,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 1560,
-        "emotion": [
-            0.21565644443035126,
-            0.5166089534759521,
-            0.2677346169948578
+        "dialog_acts": [
+            "gridspace_data_question"
         ],
+        "duration_ms": 1560,
+        "emotion": {
+            "neutral": 0.5166089534759521,
+            "negative": 0.21565644443035126,
+            "positive": 0.2677346169948578
+        },
         "human_transcript": "uh which account would you like to check",
         "index": 4,
         "offset_ms": 20919,
@@ -163,12 +177,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 1290,
-        "emotion": [
-            0.3133995831012726,
-            0.5354601740837097,
-            0.1511402428150177
+        "dialog_acts": [
+            "gridspace_problem_description",
+            "gridspace_data_response"
         ],
+        "duration_ms": 1290,
+        "emotion": {
+            "neutral": 0.5354601740837097,
+            "negative": 0.3133995831012726,
+            "positive": 0.1511402428150177
+        },
         "human_transcript": "my savings account",
         "index": 5,
         "offset_ms": 24889,
@@ -189,12 +207,16 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 3690,
-        "emotion": [
-            0.3250683844089508,
-            0.5437576770782471,
-            0.1311739832162857
+        "dialog_acts": [
+            "gridspace_data_question",
+            "gridspace_data_response"
         ],
+        "duration_ms": 3690,
+        "emotion": {
+            "neutral": 0.5437576770782471,
+            "negative": 0.3250683844089508,
+            "positive": 0.1311739832162857
+        },
         "human_transcript": "<unk> you currently have four hundred and fifty dollars in your savings account",
         "index": 6,
         "offset_ms": 29119,
@@ -235,12 +257,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 1320,
-        "emotion": [
-            0.08082886040210724,
-            0.36059439182281494,
-            0.558576762676239
+        "dialog_acts": [
+            "gridspace_open_question"
         ],
+        "duration_ms": 1320,
+        "emotion": {
+            "neutral": 0.36059439182281494,
+            "negative": 0.08082886040210724,
+            "positive": 0.558576762676239
+        },
         "human_transcript": "is there anything else i can help you with",
         "index": 7,
         "offset_ms": 33319,
@@ -273,12 +298,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 840,
-        "emotion": [
-            0.11632488667964935,
-            0.3704993724822998,
-            0.5131756663322449
+        "dialog_acts": [
+            "gridspace_other",
+            "gridspace_thanks"
         ],
+        "duration_ms": 840,
+        "emotion": {
+            "neutral": 0.3704993724822998,
+            "negative": 0.11632488667964935,
+            "positive": 0.5131756663322449
+        },
         "human_transcript": "no thank you",
         "index": 8,
         "offset_ms": 37229,
@@ -299,12 +328,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 1380,
-        "emotion": [
-            0.02366163209080696,
-            0.30952516198158264,
-            0.6668132543563843
+        "dialog_acts": [
+            "gridspace_closing"
         ],
+        "duration_ms": 1380,
+        "emotion": {
+            "neutral": 0.30952516198158264,
+            "negative": 0.02366163209080696,
+            "positive": 0.6668132543563843
+        },
         "human_transcript": "thank you for calling have a great day",
         "index": 9,
         "offset_ms": 40119,

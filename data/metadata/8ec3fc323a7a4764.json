@@ -9,9 +9,9 @@
             {
                 "submit_time_ms": 1591054345523,
                 "data": {
-                    "transfer source account": "savings",
-                    "transfer amount": "147.00",
                     "transfer destination account": "checking",
+                    "transfer amount": "147.00",
+                    "transfer source account": "savings",
                     "task_type": "transfer money"
                 }
             }
@@ -20,9 +20,9 @@
         "survey_response": {
             "submit_time_ms": 1591054484460,
             "data": {
-                "partner_rating": "10",
                 "additional_comments": "I missed the \"repeat\" request in the beginning of the script. It would be nice to be able to view an example script before starting these calls to familiarize ourselves with what we need to do. Thanks",
-                "ease_of_connection": "10"
+                "ease_of_connection": "10",
+                "partner_rating": "10"
             }
         }
     },
@@ -41,8 +41,8 @@
         "survey_response": {
             "submit_time_ms": 1591054350236,
             "data": {
-                "partner_rating": "10",
-                "ease_of_connection": "10"
+                "ease_of_connection": "10",
+                "partner_rating": "10"
             }
         }
     },
@@ -50,17 +50,17 @@
     "sid": "8ec3fc323a7a4764",
     "start_time_ms": 1591054274413,
     "labels": {
-        "caller_mos": 4.0,
         "lhvb_script": 5.0,
+        "caller_mos": 4.0,
         "agent_mos": 5.0
     },
     "session": "Little Harper Valley 3",
     "tasks": [
         {
-            "transfer source account": "savings",
+            "transfer destination account": "checking",
             "transfer amount": 147,
-            "task_type": "transfer money",
-            "transfer destination account": "checking"
+            "transfer source account": "savings",
+            "task_type": "transfer money"
         }
     ]
 }

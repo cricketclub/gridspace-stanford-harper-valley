@@ -18,9 +18,9 @@
         "survey_response": {
             "submit_time_ms": 1590863797169,
             "data": {
-                "partner_rating": "10",
                 "additional_comments": "zip code had wrong number of digits ",
-                "ease_of_connection": "10"
+                "ease_of_connection": "10",
+                "partner_rating": "10"
             }
         }
     },
@@ -41,17 +41,17 @@
     "sid": "77339eed9cf249a9",
     "start_time_ms": 1590863680810,
     "labels": {
-        "caller_mos": 3.0,
         "lhvb_script": 5.0,
+        "caller_mos": 3.0,
         "agent_mos": 5.0
     },
     "session": "Little Harper Valley 2",
     "tasks": [
         {
-            "transfer source account": "checking",
+            "transfer destination account": "savings",
             "transfer amount": 106,
-            "task_type": "transfer money",
-            "transfer destination account": "savings"
+            "transfer source account": "checking",
+            "task_type": "transfer money"
         }
     ]
 }

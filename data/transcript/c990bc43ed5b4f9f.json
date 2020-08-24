@@ -1,12 +1,15 @@
 [
     {
         "channel_index": 2,
-        "duration_ms": 4200,
-        "emotion": [
-            0.01724591664969921,
-            0.30043938755989075,
-            0.6823146939277649
+        "dialog_acts": [
+            "gridspace_greeting"
         ],
+        "duration_ms": 4200,
+        "emotion": {
+            "neutral": 0.30043938755989075,
+            "negative": 0.01724591664969921,
+            "positive": 0.6823146939277649
+        },
         "human_transcript": "hello this is harper valley national bank my name is mary how can i help you today",
         "index": 1,
         "offset_ms": 4039,
@@ -55,12 +58,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 2490,
-        "emotion": [
-            0.11697757989168167,
-            0.49634355306625366,
-            0.38667890429496765
+        "dialog_acts": [
+            "gridspace_greeting",
+            "gridspace_problem_description"
         ],
+        "duration_ms": 2490,
+        "emotion": {
+            "neutral": 0.49634355306625366,
+            "negative": 0.11697757989168167,
+            "positive": 0.38667890429496765
+        },
         "human_transcript": "hi my name is linda rodriguez",
         "index": 2,
         "offset_ms": 9619,
@@ -87,12 +94,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 1950,
-        "emotion": [
-            0.30498361587524414,
-            0.559185802936554,
-            0.13583053648471832
+        "dialog_acts": [
+            "gridspace_problem_description",
+            "gridspace_data_response"
         ],
+        "duration_ms": 1950,
+        "emotion": {
+            "neutral": 0.559185802936554,
+            "negative": 0.30498361587524414,
+            "positive": 0.13583053648471832
+        },
         "human_transcript": "what are the local branch hours",
         "index": 3,
         "offset_ms": 12789,
@@ -119,12 +130,16 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 270,
-        "emotion": [
-            0.0,
-            1.0,
-            0.0
+        "dialog_acts": [
+            "gridspace_acknowledgement",
+            "gridspace_other"
         ],
+        "duration_ms": 270,
+        "emotion": {
+            "neutral": 1.0,
+            "negative": 0.0,
+            "positive": 0.0
+        },
         "human_transcript": "[noise]",
         "index": 4,
         "offset_ms": 15789,
@@ -141,12 +156,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 8310,
-        "emotion": [
-            0.18864920735359192,
-            0.5175639390945435,
-            0.29378682374954224
+        "dialog_acts": [
+            "gridspace_open_question"
         ],
+        "duration_ms": 8310,
+        "emotion": {
+            "neutral": 0.5175639390945435,
+            "negative": 0.18864920735359192,
+            "positive": 0.29378682374954224
+        },
         "human_transcript": "alright linda the local branch hours are from nine thirty a m to five p m is there anything else i can help you with today",
         "index": 5,
         "offset_ms": 20219,
@@ -213,12 +231,15 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 930,
-        "emotion": [
-            0.3523117005825043,
-            0.5013746023178101,
-            0.14631372690200806
+        "dialog_acts": [
+            "gridspace_other"
         ],
+        "duration_ms": 930,
+        "emotion": {
+            "neutral": 0.5013746023178101,
+            "negative": 0.3523117005825043,
+            "positive": 0.14631372690200806
+        },
         "human_transcript": "no that's it",
         "index": 6,
         "offset_ms": 29719,
@@ -239,12 +260,16 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 60,
-        "emotion": [
-            0.0,
-            1.0,
-            0.0
+        "dialog_acts": [
+            "gridspace_acknowledgement",
+            "gridspace_closing"
         ],
+        "duration_ms": 60,
+        "emotion": {
+            "neutral": 1.0,
+            "negative": 0.0,
+            "positive": 0.0
+        },
         "human_transcript": "[noise]",
         "index": 7,
         "offset_ms": 30289,
@@ -261,12 +286,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 5670,
-        "emotion": [
-            0.011135034263134003,
-            0.25196895003318787,
-            0.7368959784507751
+        "dialog_acts": [
+            "gridspace_closing"
         ],
+        "duration_ms": 5670,
+        "emotion": {
+            "neutral": 0.25196895003318787,
+            "negative": 0.011135034263134003,
+            "positive": 0.7368959784507751
+        },
         "human_transcript": "well i wanna thank you for calling harper valley national bank and you have a great day bye bye now",
         "index": 8,
         "offset_ms": 32319,
@@ -321,12 +349,15 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 1440,
-        "emotion": [
-            0.12575092911720276,
-            0.4918346703052521,
-            0.3824143707752228
+        "dialog_acts": [
+            "gridspace_closing"
         ],
+        "duration_ms": 1440,
+        "emotion": {
+            "neutral": 0.4918346703052521,
+            "negative": 0.12575092911720276,
+            "positive": 0.3824143707752228
+        },
         "human_transcript": "you too take care",
         "index": 9,
         "offset_ms": 37819,

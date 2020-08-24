@@ -1,12 +1,16 @@
 [
     {
         "channel_index": 1,
-        "duration_ms": 180,
-        "emotion": [
-            0.2671392560005188,
-            0.5408603549003601,
-            0.19200043380260468
+        "dialog_acts": [
+            "gridspace_acknowledgement",
+            "gridspace_greeting"
         ],
+        "duration_ms": 180,
+        "emotion": {
+            "neutral": 0.5408603549003601,
+            "negative": 0.2671392560005188,
+            "positive": 0.19200043380260468
+        },
         "human_transcript": "[noise]",
         "index": 1,
         "offset_ms": 2930,
@@ -25,12 +29,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 4350,
-        "emotion": [
-            0.0522853285074234,
-            0.3393861949443817,
-            0.6083284020423889
+        "dialog_acts": [
+            "gridspace_greeting"
         ],
+        "duration_ms": 4350,
+        "emotion": {
+            "neutral": 0.3393861949443817,
+            "negative": 0.0522853285074234,
+            "positive": 0.6083284020423889
+        },
         "human_transcript": "hello this is harper valley national bank my name is robert how can i help you today",
         "index": 2,
         "offset_ms": 4200,
@@ -79,12 +86,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 4830,
-        "emotion": [
-            0.03072812408208847,
-            0.34002652764320374,
-            0.6292453408241272
+        "dialog_acts": [
+            "gridspace_greeting",
+            "gridspace_problem_description"
         ],
+        "duration_ms": 4830,
+        "emotion": {
+            "neutral": 0.34002652764320374,
+            "negative": 0.03072812408208847,
+            "positive": 0.6292453408241272
+        },
         "human_transcript": "hi my name is james jones what are the branch the local branch hours",
         "index": 3,
         "offset_ms": 9690,
@@ -125,12 +136,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 5280,
-        "emotion": [
-            0.1132306456565857,
-            0.3925170302391052,
-            0.4942522943019867
+        "dialog_acts": [
+            "gridspace_open_question"
         ],
+        "duration_ms": 5280,
+        "emotion": {
+            "neutral": 0.3925170302391052,
+            "negative": 0.1132306456565857,
+            "positive": 0.4942522943019867
+        },
         "human_transcript": "the branch hours are from nine thirty a m to five p m is there anything else i can help you with",
         "index": 4,
         "offset_ms": 16250,
@@ -187,12 +201,15 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 2310,
-        "emotion": [
-            0.025640495121479034,
-            0.2711833417415619,
-            0.7031762003898621
+        "dialog_acts": [
+            "gridspace_thanks"
         ],
+        "duration_ms": 2310,
+        "emotion": {
+            "neutral": 0.2711833417415619,
+            "negative": 0.025640495121479034,
+            "positive": 0.7031762003898621
+        },
         "human_transcript": "no that's all i need for today thank you so much",
         "index": 5,
         "offset_ms": 22490,
@@ -227,12 +244,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 2310,
-        "emotion": [
-            0.009650635533034801,
-            0.23244164884090424,
-            0.7579076886177063
+        "dialog_acts": [
+            "gridspace_closing"
         ],
+        "duration_ms": 2310,
+        "emotion": {
+            "neutral": 0.23244164884090424,
+            "negative": 0.009650635533034801,
+            "positive": 0.7579076886177063
+        },
         "human_transcript": "yeah you have a wonderful day bye",
         "index": 6,
         "offset_ms": 25920,
@@ -261,12 +281,15 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 1140,
-        "emotion": [
-            0.0409996397793293,
-            0.3515188992023468,
-            0.6074814200401306
+        "dialog_acts": [
+            "gridspace_closing"
         ],
+        "duration_ms": 1140,
+        "emotion": {
+            "neutral": 0.3515188992023468,
+            "negative": 0.0409996397793293,
+            "positive": 0.6074814200401306
+        },
         "human_transcript": "you too bye",
         "index": 7,
         "offset_ms": 29330,

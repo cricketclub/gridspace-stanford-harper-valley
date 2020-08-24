@@ -1,12 +1,16 @@
 [
     {
         "channel_index": 2,
-        "duration_ms": 5160,
-        "emotion": [
-            0.01756674237549305,
-            0.30842772126197815,
-            0.6740055084228516
+        "dialog_acts": [
+            "gridspace_greeting",
+            "gridspace_open_question"
         ],
+        "duration_ms": 5160,
+        "emotion": {
+            "neutral": 0.30842772126197815,
+            "negative": 0.01756674237549305,
+            "positive": 0.6740055084228516
+        },
         "human_transcript": "[noise] hello this is harper valley national bank my name is patricia how can i help you today",
         "index": 1,
         "offset_ms": 3690,
@@ -57,12 +61,15 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 90,
-        "emotion": [
-            0.28163397312164307,
-            0.5281780958175659,
-            0.19018791615962982
+        "dialog_acts": [
+            "gridspace_filler_disfluency"
         ],
+        "duration_ms": 90,
+        "emotion": {
+            "neutral": 0.5281780958175659,
+            "negative": 0.28163397312164307,
+            "positive": 0.19018791615962982
+        },
         "human_transcript": "[noise]",
         "index": 2,
         "offset_ms": 7590,
@@ -79,12 +86,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 90,
-        "emotion": [
-            0.0,
-            1.0,
-            0.0
+        "dialog_acts": [
+            "gridspace_filler_disfluency",
+            "gridspace_problem_description"
         ],
+        "duration_ms": 90,
+        "emotion": {
+            "neutral": 1.0,
+            "negative": 0.0,
+            "positive": 0.0
+        },
         "human_transcript": "[noise]",
         "index": 3,
         "offset_ms": 8190,
@@ -101,12 +112,15 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 3360,
-        "emotion": [
-            0.03196311369538307,
-            0.30591341853141785,
-            0.6621235013008118
+        "dialog_acts": [
+            "gridspace_problem_description"
         ],
+        "duration_ms": 3360,
+        "emotion": {
+            "neutral": 0.30591341853141785,
+            "negative": 0.03196311369538307,
+            "positive": 0.6621235013008118
+        },
         "human_transcript": "hi my name is mary williams i need a new checkbook",
         "index": 4,
         "offset_ms": 10220,
@@ -143,12 +157,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 180,
-        "emotion": [
-            0.0,
-            1.0,
-            0.0
+        "dialog_acts": [
+            "gridspace_other"
         ],
+        "duration_ms": 180,
+        "emotion": {
+            "neutral": 1.0,
+            "negative": 0.0,
+            "positive": 0.0
+        },
         "human_transcript": "[noise]",
         "index": 5,
         "offset_ms": 10590,
@@ -165,12 +182,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 3240,
-        "emotion": [
-            0.40273818373680115,
-            0.4828713536262512,
-            0.11439048498868942
+        "dialog_acts": [
+            "gridspace_data_question"
         ],
+        "duration_ms": 3240,
+        "emotion": {
+            "neutral": 0.4828713536262512,
+            "negative": 0.40273818373680115,
+            "positive": 0.11439048498868942
+        },
         "human_transcript": "[noise] what is your address",
         "index": 6,
         "offset_ms": 15390,
@@ -195,12 +215,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 2160,
-        "emotion": [
-            0.2464214712381363,
-            0.5631866455078125,
-            0.1903918832540512
+        "dialog_acts": [
+            "gridspace_data_communication",
+            "gridspace_data_response"
         ],
+        "duration_ms": 2160,
+        "emotion": {
+            "neutral": 0.5631866455078125,
+            "negative": 0.2464214712381363,
+            "positive": 0.1903918832540512
+        },
         "human_transcript": "my address is six zero six me",
         "index": 7,
         "offset_ms": 20020,
@@ -229,12 +253,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 990,
-        "emotion": [
-            0.3510616719722748,
-            0.49395230412483215,
-            0.1549859642982483
+        "dialog_acts": [
+            "gridspace_data_question"
         ],
+        "duration_ms": 990,
+        "emotion": {
+            "neutral": 0.49395230412483215,
+            "negative": 0.3510616719722748,
+            "positive": 0.1549859642982483
+        },
         "human_transcript": "what is your address",
         "index": 8,
         "offset_ms": 20290,
@@ -257,12 +284,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 3270,
-        "emotion": [
-            0.17910043895244598,
-            0.5235657691955566,
-            0.29733383655548096
+        "dialog_acts": [
+            "gridspace_response",
+            "gridspace_data_response"
         ],
+        "duration_ms": 3270,
+        "emotion": {
+            "neutral": 0.5235657691955566,
+            "negative": 0.17910043895244598,
+            "positive": 0.29733383655548096
+        },
         "human_transcript": "mhm my address is six zero six main street",
         "index": 9,
         "offset_ms": 22720,
@@ -301,12 +332,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 1860,
-        "emotion": [
-            0.18086256086826324,
-            0.5619608163833618,
-            0.25717663764953613
+        "dialog_acts": [
+            "gridspace_response",
+            "gridspace_data_communication"
         ],
+        "duration_ms": 1860,
+        "emotion": {
+            "neutral": 0.5619608163833618,
+            "negative": 0.18086256086826324,
+            "positive": 0.25717663764953613
+        },
         "human_transcript": "that's in harper valley oregon",
         "index": 10,
         "offset_ms": 27220,
@@ -331,12 +366,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 3630,
-        "emotion": [
-            0.3436761200428009,
-            0.5571105480194092,
-            0.09921326488256454
+        "dialog_acts": [
+            "gridspace_response",
+            "gridspace_data_response"
         ],
+        "duration_ms": 3630,
+        "emotion": {
+            "neutral": 0.5571105480194092,
+            "negative": 0.3436761200428009,
+            "positive": 0.09921326488256454
+        },
         "human_transcript": "and my zip code is six eight nine one nine",
         "index": 11,
         "offset_ms": 31020,
@@ -371,12 +410,16 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 4890,
-        "emotion": [
-            0.07297345250844955,
-            0.3536345362663269,
-            0.5733919739723206
+        "dialog_acts": [
+            "gridspace_procedure_explanation",
+            "gridspace_open_question"
         ],
+        "duration_ms": 4890,
+        "emotion": {
+            "neutral": 0.3536345362663269,
+            "negative": 0.07297345250844955,
+            "positive": 0.5733919739723206
+        },
         "human_transcript": "okay a new checkbook has been sent to your home address is there anything else i can do for you today",
         "index": 12,
         "offset_ms": 39820,
@@ -433,12 +476,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 600,
-        "emotion": [
-            0.0,
-            1.0,
-            0.0
+        "dialog_acts": [
+            "gridspace_data_communication",
+            "gridspace_data_response"
         ],
+        "duration_ms": 600,
+        "emotion": {
+            "neutral": 1.0,
+            "negative": 0.0,
+            "positive": 0.0
+        },
         "human_transcript": "[noise]",
         "index": 13,
         "offset_ms": 41290,
@@ -457,12 +504,15 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 1320,
-        "emotion": [
-            0.02456633560359478,
-            0.2840038239955902,
-            0.691429853439331
+        "dialog_acts": [
+            "gridspace_thanks"
         ],
+        "duration_ms": 1320,
+        "emotion": {
+            "neutral": 0.2840038239955902,
+            "negative": 0.02456633560359478,
+            "positive": 0.691429853439331
+        },
         "human_transcript": "and that will be all thank you",
         "index": 14,
         "offset_ms": 46520,
@@ -491,12 +541,16 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 1920,
-        "emotion": [
-            0.024742335081100464,
-            0.3062297999858856,
-            0.6690278053283691
+        "dialog_acts": [
+            "gridspace_other",
+            "gridspace_closing"
         ],
+        "duration_ms": 1920,
+        "emotion": {
+            "neutral": 0.3062297999858856,
+            "negative": 0.024742335081100464,
+            "positive": 0.6690278053283691
+        },
         "human_transcript": "thank you for calling have a great day",
         "index": 15,
         "offset_ms": 49320,
@@ -527,12 +581,15 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 390,
-        "emotion": [
-            0.0,
-            1.0,
-            0.0
+        "dialog_acts": [
+            "gridspace_closing"
         ],
+        "duration_ms": 390,
+        "emotion": {
+            "neutral": 1.0,
+            "negative": 0.0,
+            "positive": 0.0
+        },
         "human_transcript": "[noise]",
         "index": 16,
         "offset_ms": 52590,

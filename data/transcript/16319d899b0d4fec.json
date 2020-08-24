@@ -1,12 +1,15 @@
 [
     {
         "channel_index": 1,
-        "duration_ms": 540,
-        "emotion": [
-            0.0,
-            1.0,
-            0.0
+        "dialog_acts": [
+            "gridspace_greeting"
         ],
+        "duration_ms": 540,
+        "emotion": {
+            "neutral": 1.0,
+            "negative": 0.0,
+            "positive": 0.0
+        },
         "human_transcript": "[noise]",
         "index": 1,
         "offset_ms": 30,
@@ -23,12 +26,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 300,
-        "emotion": [
-            0.1263463944196701,
-            0.42960187792778015,
-            0.44405174255371094
+        "dialog_acts": [
+            "gridspace_greeting"
         ],
+        "duration_ms": 300,
+        "emotion": {
+            "neutral": 0.42960187792778015,
+            "negative": 0.1263463944196701,
+            "positive": 0.44405174255371094
+        },
         "human_transcript": "hello",
         "index": 2,
         "offset_ms": 1819,
@@ -45,12 +51,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 1260,
-        "emotion": [
-            0.0,
-            1.0,
-            0.0
+        "dialog_acts": [
+            "gridspace_greeting",
+            "gridspace_filler_disfluency"
         ],
+        "duration_ms": 1260,
+        "emotion": {
+            "neutral": 1.0,
+            "negative": 0.0,
+            "positive": 0.0
+        },
         "human_transcript": "[noise]",
         "index": 3,
         "offset_ms": 1989,
@@ -67,12 +77,15 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 270,
-        "emotion": [
-            0.0,
-            1.0,
-            0.0
+        "dialog_acts": [
+            "gridspace_greeting"
         ],
+        "duration_ms": 270,
+        "emotion": {
+            "neutral": 1.0,
+            "negative": 0.0,
+            "positive": 0.0
+        },
         "human_transcript": "[noise]",
         "index": 4,
         "offset_ms": 4189,
@@ -89,12 +102,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 4260,
-        "emotion": [
-            0.02400776371359825,
-            0.3122541308403015,
-            0.6637381315231323
+        "dialog_acts": [
+            "gridspace_greeting"
         ],
+        "duration_ms": 4260,
+        "emotion": {
+            "neutral": 0.3122541308403015,
+            "negative": 0.02400776371359825,
+            "positive": 0.6637381315231323
+        },
         "human_transcript": "hello this is harper valley national bank my name is james how can i help you today",
         "index": 5,
         "offset_ms": 5019,
@@ -143,12 +159,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 840,
-        "emotion": [
-            0.15889495611190796,
-            0.40580058097839355,
-            0.4353043735027313
+        "dialog_acts": [
+            "gridspace_greeting",
+            "gridspace_other"
         ],
+        "duration_ms": 840,
+        "emotion": {
+            "neutral": 0.40580058097839355,
+            "negative": 0.15889495611190796,
+            "positive": 0.4353043735027313
+        },
         "human_transcript": "[noise]",
         "index": 6,
         "offset_ms": 6319,
@@ -167,12 +187,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 4650,
-        "emotion": [
-            0.13819824159145355,
-            0.40583178400993347,
-            0.4559699594974518
+        "dialog_acts": [
+            "gridspace_greeting",
+            "gridspace_problem_description"
         ],
+        "duration_ms": 4650,
+        "emotion": {
+            "neutral": 0.40583178400993347,
+            "negative": 0.13819824159145355,
+            "positive": 0.4559699594974518
+        },
         "human_transcript": "hi my name is mary brown i need to check my account balance",
         "index": 7,
         "offset_ms": 10879,
@@ -213,12 +237,16 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 1980,
-        "emotion": [
-            0.13426893949508667,
-            0.4590616524219513,
-            0.40666937828063965
+        "dialog_acts": [
+            "gridspace_data_question",
+            "gridspace_acknowledgement"
         ],
+        "duration_ms": 1980,
+        "emotion": {
+            "neutral": 0.4590616524219513,
+            "negative": 0.13426893949508667,
+            "positive": 0.40666937828063965
+        },
         "human_transcript": "okay and which account would you like to check",
         "index": 8,
         "offset_ms": 20479,
@@ -251,12 +279,15 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 150,
-        "emotion": [
-            0.2830716073513031,
-            0.524366021156311,
-            0.19256234169006348
+        "dialog_acts": [
+            "gridspace_filler_disfluency"
         ],
+        "duration_ms": 150,
+        "emotion": {
+            "neutral": 0.524366021156311,
+            "negative": 0.2830716073513031,
+            "positive": 0.19256234169006348
+        },
         "human_transcript": "[noise]",
         "index": 9,
         "offset_ms": 22019,
@@ -273,12 +304,15 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 1140,
-        "emotion": [
-            0.08887337893247604,
-            0.374744713306427,
-            0.5363818407058716
+        "dialog_acts": [
+            "gridspace_data_response"
         ],
+        "duration_ms": 1140,
+        "emotion": {
+            "neutral": 0.374744713306427,
+            "negative": 0.08887337893247604,
+            "positive": 0.5363818407058716
+        },
         "human_transcript": "my savings account",
         "index": 10,
         "offset_ms": 24719,
@@ -299,12 +333,16 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 6330,
-        "emotion": [
-            0.04035655036568642,
-            0.30129873752593994,
-            0.6583447456359863
+        "dialog_acts": [
+            "gridspace_acknowledgement",
+            "gridspace_procedure_explanation"
         ],
+        "duration_ms": 6330,
+        "emotion": {
+            "neutral": 0.30129873752593994,
+            "negative": 0.04035655036568642,
+            "positive": 0.6583447456359863
+        },
         "human_transcript": "okay your savings account balance is one hundred and sixty three dollars is there anything else i can help you with",
         "index": 11,
         "offset_ms": 30389,
@@ -361,12 +399,15 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 630,
-        "emotion": [
-            0.30945611000061035,
-            0.5095495581626892,
-            0.18099428713321686
+        "dialog_acts": [
+            "gridspace_data_response"
         ],
+        "duration_ms": 630,
+        "emotion": {
+            "neutral": 0.5095495581626892,
+            "negative": 0.30945611000061035,
+            "positive": 0.18099428713321686
+        },
         "human_transcript": "[noise]",
         "index": 12,
         "offset_ms": 31719,
@@ -387,12 +428,15 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 930,
-        "emotion": [
-            0.0,
-            1.0,
-            0.0
+        "dialog_acts": [
+            "gridspace_data_response"
         ],
+        "duration_ms": 930,
+        "emotion": {
+            "neutral": 1.0,
+            "negative": 0.0,
+            "positive": 0.0
+        },
         "human_transcript": "[noise] [noise] [noise]",
         "index": 13,
         "offset_ms": 33289,
@@ -413,12 +457,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 540,
-        "emotion": [
-            0.2270897626876831,
-            0.5381698608398438,
-            0.23474042117595673
+        "dialog_acts": [
+            "gridspace_data_communication",
+            "gridspace_data_response"
         ],
+        "duration_ms": 540,
+        "emotion": {
+            "neutral": 0.5381698608398438,
+            "negative": 0.2270897626876831,
+            "positive": 0.23474042117595673
+        },
         "human_transcript": "[noise]",
         "index": 14,
         "offset_ms": 35019,
@@ -437,12 +485,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 270,
-        "emotion": [
-            0.2423762083053589,
-            0.5226418375968933,
-            0.2349819839000702
+        "dialog_acts": [
+            "gridspace_acknowledgement",
+            "gridspace_filler_disfluency"
         ],
+        "duration_ms": 270,
+        "emotion": {
+            "neutral": 0.5226418375968933,
+            "negative": 0.2423762083053589,
+            "positive": 0.2349819839000702
+        },
         "human_transcript": "[noise]",
         "index": 15,
         "offset_ms": 36629,
@@ -459,12 +511,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 1590,
-        "emotion": [
-            0.028683358803391457,
-            0.29154086112976074,
-            0.6797757148742676
+        "dialog_acts": [
+            "gridspace_thanks",
+            "gridspace_other"
         ],
+        "duration_ms": 1590,
+        "emotion": {
+            "neutral": 0.29154086112976074,
+            "negative": 0.028683358803391457,
+            "positive": 0.6797757148742676
+        },
         "human_transcript": "no that'll be all thank you",
         "index": 16,
         "offset_ms": 38479,
@@ -491,12 +547,16 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 1680,
-        "emotion": [
-            0.030451051890850067,
-            0.3288658857345581,
-            0.6406830549240112
+        "dialog_acts": [
+            "gridspace_thanks",
+            "gridspace_closing"
         ],
+        "duration_ms": 1680,
+        "emotion": {
+            "neutral": 0.3288658857345581,
+            "negative": 0.030451051890850067,
+            "positive": 0.6406830549240112
+        },
         "human_transcript": "thank you for calling and have a great day",
         "index": 17,
         "offset_ms": 41619,
@@ -529,12 +589,15 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 210,
-        "emotion": [
-            0.0,
-            1.0,
-            0.0
+        "dialog_acts": [
+            "gridspace_closing"
         ],
+        "duration_ms": 210,
+        "emotion": {
+            "neutral": 1.0,
+            "negative": 0.0,
+            "positive": 0.0
+        },
         "human_transcript": "[noise]",
         "index": 18,
         "offset_ms": 42989,
@@ -551,12 +614,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 360,
-        "emotion": [
-            0.2785465717315674,
-            0.5466978549957275,
-            0.17475558817386627
+        "dialog_acts": [
+            "gridspace_acknowledgement",
+            "gridspace_closing"
         ],
+        "duration_ms": 360,
+        "emotion": {
+            "neutral": 0.5466978549957275,
+            "negative": 0.2785465717315674,
+            "positive": 0.17475558817386627
+        },
         "human_transcript": "[noise]",
         "index": 19,
         "offset_ms": 44159,
@@ -575,12 +642,15 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 1170,
-        "emotion": [
-            0.03658686950802803,
-            0.3476175367832184,
-            0.6157956123352051
+        "dialog_acts": [
+            "gridspace_closing"
         ],
+        "duration_ms": 1170,
+        "emotion": {
+            "neutral": 0.3476175367832184,
+            "negative": 0.03658686950802803,
+            "positive": 0.6157956123352051
+        },
         "human_transcript": "you too bye now",
         "index": 20,
         "offset_ms": 45119,
@@ -603,12 +673,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 270,
-        "emotion": [
-            0.0,
-            1.0,
-            0.0
+        "dialog_acts": [
+            "gridspace_closing"
         ],
+        "duration_ms": 270,
+        "emotion": {
+            "neutral": 1.0,
+            "negative": 0.0,
+            "positive": 0.0
+        },
         "human_transcript": "[noise]",
         "index": 21,
         "offset_ms": 45289,
@@ -625,12 +698,15 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 1290,
-        "emotion": [
-            0.0,
-            1.0,
-            0.0
+        "dialog_acts": [
+            "gridspace_closing"
         ],
+        "duration_ms": 1290,
+        "emotion": {
+            "neutral": 1.0,
+            "negative": 0.0,
+            "positive": 0.0
+        },
         "human_transcript": "[noise] [noise]",
         "index": 22,
         "offset_ms": 46789,
@@ -649,12 +725,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 210,
-        "emotion": [
-            0.0,
-            1.0,
-            0.0
+        "dialog_acts": [
+            "gridspace_closing"
         ],
+        "duration_ms": 210,
+        "emotion": {
+            "neutral": 1.0,
+            "negative": 0.0,
+            "positive": 0.0
+        },
         "human_transcript": "[noise]",
         "index": 23,
         "offset_ms": 47489,

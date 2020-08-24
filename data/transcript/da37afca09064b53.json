@@ -1,12 +1,16 @@
 [
     {
         "channel_index": 2,
-        "duration_ms": 4410,
-        "emotion": [
-            0.014529792591929436,
-            0.30527427792549133,
-            0.6801959276199341
+        "dialog_acts": [
+            "gridspace_greeting",
+            "gridspace_open_question"
         ],
+        "duration_ms": 4410,
+        "emotion": {
+            "neutral": 0.30527427792549133,
+            "negative": 0.014529792591929436,
+            "positive": 0.6801959276199341
+        },
         "human_transcript": "hello this is harper valley national bank my name is patricia how can i help you today",
         "index": 1,
         "offset_ms": 2020,
@@ -55,12 +59,15 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 3540,
-        "emotion": [
-            0.22897708415985107,
-            0.5639410018920898,
-            0.20708198845386505
+        "dialog_acts": [
+            "gridspace_problem_description"
         ],
+        "duration_ms": 3540,
+        "emotion": {
+            "neutral": 0.5639410018920898,
+            "negative": 0.22897708415985107,
+            "positive": 0.20708198845386505
+        },
         "human_transcript": "i would like to transfer money between my accounts",
         "index": 2,
         "offset_ms": 9690,
@@ -93,12 +100,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 90,
-        "emotion": [
-            0.2457481026649475,
-            0.5017651319503784,
-            0.2524867057800293
+        "dialog_acts": [
+            "gridspace_filler_disfluency",
+            "gridspace_problem_description"
         ],
+        "duration_ms": 90,
+        "emotion": {
+            "neutral": 0.5017651319503784,
+            "negative": 0.2457481026649475,
+            "positive": 0.2524867057800293
+        },
         "human_transcript": "[noise]",
         "index": 3,
         "offset_ms": 14620,
@@ -115,12 +126,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 30,
-        "emotion": [
-            0.0,
-            1.0,
-            0.0
+        "dialog_acts": [
+            "gridspace_filler_disfluency",
+            "gridspace_problem_description"
         ],
+        "duration_ms": 30,
+        "emotion": {
+            "neutral": 1.0,
+            "negative": 0.0,
+            "positive": 0.0
+        },
         "human_transcript": "[noise]",
         "index": 4,
         "offset_ms": 21490,

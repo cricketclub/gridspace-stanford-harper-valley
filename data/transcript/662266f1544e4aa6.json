@@ -1,12 +1,15 @@
 [
     {
         "channel_index": 2,
-        "duration_ms": 3840,
-        "emotion": [
-            0.015962868928909302,
-            0.30390506982803345,
-            0.6801319718360901
+        "dialog_acts": [
+            "gridspace_greeting"
         ],
+        "duration_ms": 3840,
+        "emotion": {
+            "neutral": 0.30390506982803345,
+            "negative": 0.015962868928909302,
+            "positive": 0.6801319718360901
+        },
         "human_transcript": "hello this is harper valley national bank my name is david how can i help you today",
         "index": 1,
         "offset_ms": 3730,
@@ -55,12 +58,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 2250,
-        "emotion": [
-            0.05954532325267792,
-            0.32704538106918335,
-            0.6134093403816223
+        "dialog_acts": [
+            "gridspace_response",
+            "gridspace_data_communication"
         ],
+        "duration_ms": 2250,
+        "emotion": {
+            "neutral": 0.32704538106918335,
+            "negative": 0.05954532325267792,
+            "positive": 0.6134093403816223
+        },
         "human_transcript": "hi my name is michael miller",
         "index": 2,
         "offset_ms": 8620,
@@ -87,12 +94,15 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 1500,
-        "emotion": [
-            0.5113007426261902,
-            0.3991812765598297,
-            0.08951794356107712
+        "dialog_acts": [
+            "gridspace_response"
         ],
+        "duration_ms": 1500,
+        "emotion": {
+            "neutral": 0.3991812765598297,
+            "negative": 0.5113007426261902,
+            "positive": 0.08951794356107712
+        },
         "human_transcript": "i need to check my account balance",
         "index": 3,
         "offset_ms": 11490,
@@ -119,12 +129,16 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 90,
-        "emotion": [
-            0.0,
-            1.0,
-            0.0
+        "dialog_acts": [
+            "gridspace_other",
+            "gridspace_acknowledgement"
         ],
+        "duration_ms": 90,
+        "emotion": {
+            "neutral": 1.0,
+            "negative": 0.0,
+            "positive": 0.0
+        },
         "human_transcript": "[noise]",
         "index": 4,
         "offset_ms": 12290,
@@ -141,12 +155,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 1440,
-        "emotion": [
-            0.2581445574760437,
-            0.531227707862854,
-            0.21062777936458588
+        "dialog_acts": [
+            "gridspace_data_question"
         ],
+        "duration_ms": 1440,
+        "emotion": {
+            "neutral": 0.531227707862854,
+            "negative": 0.2581445574760437,
+            "positive": 0.21062777936458588
+        },
         "human_transcript": "which account would you like to check",
         "index": 5,
         "offset_ms": 16890,
@@ -175,12 +192,15 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 1080,
-        "emotion": [
-            0.32274720072746277,
-            0.5327807068824768,
-            0.144472137093544
+        "dialog_acts": [
+            "gridspace_response"
         ],
+        "duration_ms": 1080,
+        "emotion": {
+            "neutral": 0.5327807068824768,
+            "negative": 0.32274720072746277,
+            "positive": 0.144472137093544
+        },
         "human_transcript": "my savings account",
         "index": 6,
         "offset_ms": 19420,
@@ -201,12 +221,16 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 3630,
-        "emotion": [
-            0.2089841216802597,
-            0.6256371736526489,
-            0.1653786301612854
+        "dialog_acts": [
+            "gridspace_procedure_explanation",
+            "gridspace_data_response"
         ],
+        "duration_ms": 3630,
+        "emotion": {
+            "neutral": 0.6256371736526489,
+            "negative": 0.2089841216802597,
+            "positive": 0.1653786301612854
+        },
         "human_transcript": "your savings account balance is a hundred and forty eight dollars",
         "index": 7,
         "offset_ms": 23520,
@@ -243,12 +267,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 2040,
-        "emotion": [
-            0.07998736947774887,
-            0.36977827548980713,
-            0.5502343773841858
+        "dialog_acts": [
+            "gridspace_open_question"
         ],
+        "duration_ms": 2040,
+        "emotion": {
+            "neutral": 0.36977827548980713,
+            "negative": 0.07998736947774887,
+            "positive": 0.5502343773841858
+        },
         "human_transcript": "is there anything else i can help you with",
         "index": 8,
         "offset_ms": 28520,
@@ -281,12 +308,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 1320,
-        "emotion": [
-            0.028824903070926666,
-            0.2884517312049866,
-            0.682723343372345
+        "dialog_acts": [
+            "gridspace_other",
+            "gridspace_thanks"
         ],
+        "duration_ms": 1320,
+        "emotion": {
+            "neutral": 0.2884517312049866,
+            "negative": 0.028824903070926666,
+            "positive": 0.682723343372345
+        },
         "human_transcript": "no that'll be all thank you",
         "index": 9,
         "offset_ms": 31520,
@@ -313,12 +344,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 1440,
-        "emotion": [
-            0.024401597678661346,
-            0.3166123330593109,
-            0.6589860916137695
+        "dialog_acts": [
+            "gridspace_closing"
         ],
+        "duration_ms": 1440,
+        "emotion": {
+            "neutral": 0.3166123330593109,
+            "negative": 0.024401597678661346,
+            "positive": 0.6589860916137695
+        },
         "human_transcript": "thank you for calling have a great day",
         "index": 10,
         "offset_ms": 33990,

@@ -9,9 +9,9 @@
             {
                 "submit_time_ms": 1584312992086,
                 "data": {
-                    "transfer source account": "checking",
-                    "transfer amount": "147",
                     "transfer destination account": "savings",
+                    "transfer amount": "147",
+                    "transfer source account": "checking",
                     "task_type": "transfer money"
                 }
             }
@@ -37,9 +37,9 @@
         "survey_response": {
             "submit_time_ms": 1584313024873,
             "data": {
-                "partner_rating": "3",
                 "additional_comments": "no greeting wierd conversationally",
-                "ease_of_connection": "9"
+                "ease_of_connection": "9",
+                "partner_rating": "3"
             }
         }
     },
@@ -47,17 +47,17 @@
     "sid": "2f46026d92c24e1f",
     "start_time_ms": 1584312961143,
     "labels": {
-        "caller_mos": 5.0,
         "lhvb_script": 5.0,
+        "caller_mos": 5.0,
         "agent_mos": 5.0
     },
     "session": "Little Harper Valley 1",
     "tasks": [
         {
-            "transfer source account": "checking",
+            "transfer destination account": "savings",
             "transfer amount": 147,
-            "task_type": "transfer money",
-            "transfer destination account": "savings"
+            "transfer source account": "checking",
+            "task_type": "transfer money"
         }
     ]
 }

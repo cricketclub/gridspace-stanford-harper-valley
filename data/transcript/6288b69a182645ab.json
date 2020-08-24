@@ -1,12 +1,15 @@
 [
     {
         "channel_index": 1,
-        "duration_ms": 1170,
-        "emotion": [
-            0.0,
-            1.0,
-            0.0
+        "dialog_acts": [
+            "gridspace_greeting"
         ],
+        "duration_ms": 1170,
+        "emotion": {
+            "neutral": 1.0,
+            "negative": 0.0,
+            "positive": 0.0
+        },
         "human_transcript": "[noise]",
         "index": 1,
         "offset_ms": 1290,
@@ -23,12 +26,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 4050,
-        "emotion": [
-            0.011905997060239315,
-            0.2951115667819977,
-            0.6929824352264404
+        "dialog_acts": [
+            "gridspace_greeting"
         ],
+        "duration_ms": 4050,
+        "emotion": {
+            "neutral": 0.2951115667819977,
+            "negative": 0.011905997060239315,
+            "positive": 0.6929824352264404
+        },
         "human_transcript": "hello this is harper valley national bank my name is mary how can i help you today",
         "index": 2,
         "offset_ms": 3820,
@@ -77,12 +83,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 5730,
-        "emotion": [
-            0.10474207252264023,
-            0.3393200635910034,
-            0.5559378862380981
+        "dialog_acts": [
+            "gridspace_greeting",
+            "gridspace_problem_description"
         ],
+        "duration_ms": 5730,
+        "emotion": {
+            "neutral": 0.3393200635910034,
+            "negative": 0.10474207252264023,
+            "positive": 0.5559378862380981
+        },
         "human_transcript": "hi my name is elizabeth brown i would like to know what are the local branch hours",
         "index": 3,
         "offset_ms": 9319,

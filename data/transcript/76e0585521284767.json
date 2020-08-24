@@ -1,12 +1,15 @@
 [
     {
         "channel_index": 2,
-        "duration_ms": 480,
-        "emotion": [
-            0.12486357986927032,
-            0.43363434076309204,
-            0.44150206446647644
+        "dialog_acts": [
+            "gridspace_greeting"
         ],
+        "duration_ms": 480,
+        "emotion": {
+            "neutral": 0.43363434076309204,
+            "negative": 0.12486357986927032,
+            "positive": 0.44150206446647644
+        },
         "human_transcript": "hello",
         "index": 1,
         "offset_ms": 5120,
@@ -23,12 +26,16 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 4350,
-        "emotion": [
-            0.01859714463353157,
-            0.32956960797309875,
-            0.6518332958221436
+        "dialog_acts": [
+            "gridspace_greeting",
+            "gridspace_open_question"
         ],
+        "duration_ms": 4350,
+        "emotion": {
+            "neutral": 0.32956960797309875,
+            "negative": 0.01859714463353157,
+            "positive": 0.6518332958221436
+        },
         "human_transcript": "this is harper valley national bank my name is michael how can i help you today",
         "index": 2,
         "offset_ms": 6490,
@@ -75,12 +82,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 180,
-        "emotion": [
-            0.2640995979309082,
-            0.5428447127342224,
-            0.1930556744337082
+        "dialog_acts": [
+            "gridspace_acknowledgement",
+            "gridspace_greeting"
         ],
+        "duration_ms": 180,
+        "emotion": {
+            "neutral": 0.5428447127342224,
+            "negative": 0.2640995979309082,
+            "positive": 0.1930556744337082
+        },
         "human_transcript": "[noise]",
         "index": 3,
         "offset_ms": 7330,
@@ -99,12 +110,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 3570,
-        "emotion": [
-            0.15276528894901276,
-            0.3347390592098236,
-            0.5124956965446472
+        "dialog_acts": [
+            "gridspace_greeting",
+            "gridspace_problem_description"
         ],
+        "duration_ms": 3570,
+        "emotion": {
+            "neutral": 0.3347390592098236,
+            "negative": 0.15276528894901276,
+            "positive": 0.5124956965446472
+        },
         "human_transcript": "hi my name is mary garcia i need to check my account balance",
         "index": 4,
         "offset_ms": 12290,
@@ -145,12 +160,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 1500,
-        "emotion": [
-            0.25322845578193665,
-            0.523453950881958,
-            0.22331762313842773
+        "dialog_acts": [
+            "gridspace_data_question"
         ],
+        "duration_ms": 1500,
+        "emotion": {
+            "neutral": 0.523453950881958,
+            "negative": 0.25322845578193665,
+            "positive": 0.22331762313842773
+        },
         "human_transcript": "which account would you like to check",
         "index": 5,
         "offset_ms": 19390,
@@ -179,12 +197,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 1140,
-        "emotion": [
-            0.3278296887874603,
-            0.5127221941947937,
-            0.15944810211658478
+        "dialog_acts": [
+            "gridspace_response",
+            "gridspace_data_response"
         ],
+        "duration_ms": 1140,
+        "emotion": {
+            "neutral": 0.5127221941947937,
+            "negative": 0.3278296887874603,
+            "positive": 0.15944810211658478
+        },
         "human_transcript": "my savings account",
         "index": 6,
         "offset_ms": 22120,
@@ -205,12 +227,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 5580,
-        "emotion": [
-            0.07965490967035294,
-            0.3327310383319855,
-            0.5876139998435974
+        "dialog_acts": [
+            "gridspace_open_question"
         ],
+        "duration_ms": 5580,
+        "emotion": {
+            "neutral": 0.3327310383319855,
+            "negative": 0.07965490967035294,
+            "positive": 0.5876139998435974
+        },
         "human_transcript": "your savings account balance is one hundred and fifteen dollars is there anything else i can help you with",
         "index": 7,
         "offset_ms": 28190,
@@ -263,12 +288,15 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 1350,
-        "emotion": [
-            0.029864858835935593,
-            0.29404935240745544,
-            0.6760858297348022
+        "dialog_acts": [
+            "gridspace_thanks"
         ],
+        "duration_ms": 1350,
+        "emotion": {
+            "neutral": 0.29404935240745544,
+            "negative": 0.029864858835935593,
+            "positive": 0.6760858297348022
+        },
         "human_transcript": "that'll be all thank you",
         "index": 8,
         "offset_ms": 34920,
@@ -295,12 +323,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 2010,
-        "emotion": [
-            0.022705884650349617,
-            0.29986101388931274,
-            0.6774330735206604
+        "dialog_acts": [
+            "gridspace_closing"
         ],
+        "duration_ms": 2010,
+        "emotion": {
+            "neutral": 0.29986101388931274,
+            "negative": 0.022705884650349617,
+            "positive": 0.6774330735206604
+        },
         "human_transcript": "thank you for calling have a great day",
         "index": 9,
         "offset_ms": 37790,
@@ -331,12 +362,15 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 30,
-        "emotion": [
-            0.0,
-            1.0,
-            0.0
+        "dialog_acts": [
+            "gridspace_closing"
         ],
+        "duration_ms": 30,
+        "emotion": {
+            "neutral": 1.0,
+            "negative": 0.0,
+            "positive": 0.0
+        },
         "human_transcript": "[noise]",
         "index": 10,
         "offset_ms": 40590,

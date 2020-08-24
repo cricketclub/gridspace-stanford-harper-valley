@@ -1,12 +1,16 @@
 [
     {
         "channel_index": 2,
-        "duration_ms": 4380,
-        "emotion": [
-            0.02117370255291462,
-            0.34287765622138977,
-            0.635948657989502
+        "dialog_acts": [
+            "gridspace_greeting",
+            "gridspace_open_question"
         ],
+        "duration_ms": 4380,
+        "emotion": {
+            "neutral": 0.34287765622138977,
+            "negative": 0.02117370255291462,
+            "positive": 0.635948657989502
+        },
         "human_transcript": "hello this is harper valley national bank my name is james how can i help you today",
         "index": 1,
         "offset_ms": 5010,
@@ -57,12 +61,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 4110,
-        "emotion": [
-            0.016936566680669785,
-            0.25739622116088867,
-            0.7256671786308289
+        "dialog_acts": [
+            "gridspace_greeting",
+            "gridspace_problem_description"
         ],
+        "duration_ms": 4110,
+        "emotion": {
+            "neutral": 0.25739622116088867,
+            "negative": 0.016936566680669785,
+            "positive": 0.7256671786308289
+        },
         "human_transcript": "hi my name is mary jones i would like to reset my password",
         "index": 2,
         "offset_ms": 10680,
@@ -103,12 +111,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 1200,
-        "emotion": [
-            0.2678447961807251,
-            0.5390986800193787,
-            0.19305655360221863
+        "dialog_acts": [
+            "gridspace_data_question"
         ],
+        "duration_ms": 1200,
+        "emotion": {
+            "neutral": 0.5390986800193787,
+            "negative": 0.2678447961807251,
+            "positive": 0.19305655360221863
+        },
         "human_transcript": "what is your phone number",
         "index": 3,
         "offset_ms": 16790,
@@ -133,12 +144,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 5100,
-        "emotion": [
-            0.24834086000919342,
-            0.6092580556869507,
-            0.14240103960037231
+        "dialog_acts": [
+            "gridspace_response",
+            "gridspace_data_response"
         ],
+        "duration_ms": 5100,
+        "emotion": {
+            "neutral": 0.6092580556869507,
+            "negative": 0.24834086000919342,
+            "positive": 0.14240103960037231
+        },
         "human_transcript": "my phone number is one seven nine eight eight five",
         "index": 4,
         "offset_ms": 18890,
@@ -175,12 +190,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 2010,
-        "emotion": [
-            0.1726701408624649,
-            0.5958976149559021,
-            0.2314322292804718
+        "dialog_acts": [
+            "gridspace_data_communication",
+            "gridspace_data_response"
         ],
+        "duration_ms": 2010,
+        "emotion": {
+            "neutral": 0.5958976149559021,
+            "negative": 0.1726701408624649,
+            "positive": 0.2314322292804718
+        },
         "human_transcript": "two six zero five",
         "index": 5,
         "offset_ms": 24490,
@@ -203,12 +222,16 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 6090,
-        "emotion": [
-            0.07328762114048004,
-            0.40595078468322754,
-            0.5207616090774536
+        "dialog_acts": [
+            "gridspace_procedure_explanation",
+            "gridspace_open_question"
         ],
+        "duration_ms": 6090,
+        "emotion": {
+            "neutral": 0.40595078468322754,
+            "negative": 0.07328762114048004,
+            "positive": 0.5207616090774536
+        },
         "human_transcript": "your password link has been <unk> reset link has been sent to your phone is there anything else i can help you with",
         "index": 6,
         "offset_ms": 34590,
@@ -267,12 +290,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 630,
-        "emotion": [
-            0.1119290366768837,
-            0.3644982576370239,
-            0.5235727429389954
+        "dialog_acts": [
+            "gridspace_thanks",
+            "gridspace_problem_description"
         ],
+        "duration_ms": 630,
+        "emotion": {
+            "neutral": 0.3644982576370239,
+            "negative": 0.1119290366768837,
+            "positive": 0.5235727429389954
+        },
         "human_transcript": "no thank you",
         "index": 7,
         "offset_ms": 41720,
@@ -293,12 +320,16 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 1770,
-        "emotion": [
-            0.022484885528683662,
-            0.31553009152412415,
-            0.6619850397109985
+        "dialog_acts": [
+            "gridspace_thanks",
+            "gridspace_closing"
         ],
+        "duration_ms": 1770,
+        "emotion": {
+            "neutral": 0.31553009152412415,
+            "negative": 0.022484885528683662,
+            "positive": 0.6619850397109985
+        },
         "human_transcript": "thank you for calling have a great day",
         "index": 8,
         "offset_ms": 44220,

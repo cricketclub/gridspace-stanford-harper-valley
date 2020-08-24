@@ -9,8 +9,8 @@
             {
                 "submit_time_ms": 1584314344614,
                 "data": {
-                    "task_type": "check balance",
-                    "balance check account type": "checking"
+                    "balance check account type": "checking",
+                    "task_type": "check balance"
                 }
             }
         ],
@@ -35,9 +35,9 @@
         "survey_response": {
             "submit_time_ms": 1584314393716,
             "data": {
-                "partner_rating": "10",
                 "additional_comments": "why does it say \"When prompted, type Checking\" ? i am speaking on the phone, not typing.",
-                "ease_of_connection": "10"
+                "ease_of_connection": "10",
+                "partner_rating": "10"
             }
         }
     },
@@ -45,16 +45,16 @@
     "sid": "a82280eaf71d4835",
     "start_time_ms": 1584314312584,
     "labels": {
-        "caller_mos": 3.0,
         "lhvb_script": 5.0,
+        "caller_mos": 3.0,
         "agent_mos": 5.0
     },
     "session": "Little Harper Valley 1",
     "tasks": [
         {
-            "task_type": "check balance",
+            "account balance": 151,
             "balance check account type": "checking",
-            "account balance": 151
+            "task_type": "check balance"
         }
     ]
 }

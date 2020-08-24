@@ -9,8 +9,8 @@
             {
                 "submit_time_ms": 1591055858098,
                 "data": {
-                    "task_type": "check balance",
-                    "balance check account type": "checking"
+                    "balance check account type": "checking",
+                    "task_type": "check balance"
                 }
             }
         ],
@@ -18,9 +18,9 @@
         "survey_response": {
             "submit_time_ms": 1591055941949,
             "data": {
-                "partner_rating": "10",
                 "additional_comments": "should calls be 100% exact according to the script?",
-                "ease_of_connection": "10"
+                "ease_of_connection": "10",
+                "partner_rating": "10"
             }
         }
     },
@@ -39,8 +39,8 @@
         "survey_response": {
             "submit_time_ms": 1591055882342,
             "data": {
-                "partner_rating": "10",
-                "ease_of_connection": "10"
+                "ease_of_connection": "10",
+                "partner_rating": "10"
             }
         }
     },
@@ -48,16 +48,16 @@
     "sid": "6128d33e1c8a44f4",
     "start_time_ms": 1591055827754,
     "labels": {
-        "caller_mos": 3.0,
         "lhvb_script": 5.0,
+        "caller_mos": 3.0,
         "agent_mos": 4.0
     },
     "session": "Little Harper Valley 3",
     "tasks": [
         {
-            "task_type": "check balance",
+            "account balance": 101,
             "balance check account type": "checking",
-            "account balance": 101
+            "task_type": "check balance"
         }
     ]
 }

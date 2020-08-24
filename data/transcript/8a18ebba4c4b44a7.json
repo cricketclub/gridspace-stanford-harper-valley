@@ -1,12 +1,15 @@
 [
     {
         "channel_index": 1,
-        "duration_ms": 240,
-        "emotion": [
-            0.0,
-            1.0,
-            0.0
+        "dialog_acts": [
+            "gridspace_greeting"
         ],
+        "duration_ms": 240,
+        "emotion": {
+            "neutral": 1.0,
+            "negative": 0.0,
+            "positive": 0.0
+        },
         "human_transcript": "[noise]",
         "index": 1,
         "offset_ms": 4290,
@@ -23,12 +26,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 4290,
-        "emotion": [
-            0.02337457425892353,
-            0.33854779601097107,
-            0.6380776166915894
+        "dialog_acts": [
+            "gridspace_greeting"
         ],
+        "duration_ms": 4290,
+        "emotion": {
+            "neutral": 0.33854779601097107,
+            "negative": 0.02337457425892353,
+            "positive": 0.6380776166915894
+        },
         "human_transcript": "hello this is harper valley national bank my name is john how can i help you today",
         "index": 2,
         "offset_ms": 4360,
@@ -77,12 +83,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 4740,
-        "emotion": [
-            0.049107253551483154,
-            0.3289644122123718,
-            0.621928334236145
+        "dialog_acts": [
+            "gridspace_response",
+            "gridspace_greeting"
         ],
+        "duration_ms": 4740,
+        "emotion": {
+            "neutral": 0.3289644122123718,
+            "negative": 0.049107253551483154,
+            "positive": 0.621928334236145
+        },
         "human_transcript": "hi my name is james miller i lost my credit card can you send me a new one",
         "index": 3,
         "offset_ms": 9920,
@@ -133,12 +143,16 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 1500,
-        "emotion": [
-            0.14459341764450073,
-            0.555679440498352,
-            0.29972711205482483
+        "dialog_acts": [
+            "gridspace_data_question",
+            "gridspace_other"
         ],
+        "duration_ms": 1500,
+        "emotion": {
+            "neutral": 0.555679440498352,
+            "negative": 0.14459341764450073,
+            "positive": 0.29972711205482483
+        },
         "human_transcript": "which card would you like to replace",
         "index": 4,
         "offset_ms": 18990,
@@ -169,12 +183,16 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 960,
-        "emotion": [
-            0.34596937894821167,
-            0.5106199979782104,
-            0.1434105932712555
+        "dialog_acts": [
+            "gridspace_data_response",
+            "gridspace_problem_description"
         ],
+        "duration_ms": 960,
+        "emotion": {
+            "neutral": 0.5106199979782104,
+            "negative": 0.34596937894821167,
+            "positive": 0.1434105932712555
+        },
         "human_transcript": "my credit card",
         "index": 5,
         "offset_ms": 21720,
@@ -195,12 +213,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 1800,
-        "emotion": [
-            0.22981910407543182,
-            0.6018605828285217,
-            0.16832026839256287
+        "dialog_acts": [
+            "gridspace_procedure_explanation"
         ],
+        "duration_ms": 1800,
+        "emotion": {
+            "neutral": 0.6018605828285217,
+            "negative": 0.22981910407543182,
+            "positive": 0.16832026839256287
+        },
         "human_transcript": "i've ordered your replacement credit card",
         "index": 6,
         "offset_ms": 30820,
@@ -227,12 +248,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 120,
-        "emotion": [
-            0.0,
-            1.0,
-            0.0
+        "dialog_acts": [
+            "gridspace_filler_disfluency"
         ],
+        "duration_ms": 120,
+        "emotion": {
+            "neutral": 1.0,
+            "negative": 0.0,
+            "positive": 0.0
+        },
         "human_transcript": "[noise]",
         "index": 7,
         "offset_ms": 33890,
@@ -249,12 +273,15 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 540,
-        "emotion": [
-            0.32507097721099854,
-            0.501493513584137,
-            0.1734354943037033
+        "dialog_acts": [
+            "gridspace_data_response"
         ],
+        "duration_ms": 540,
+        "emotion": {
+            "neutral": 0.501493513584137,
+            "negative": 0.32507097721099854,
+            "positive": 0.1734354943037033
+        },
         "human_transcript": "i see",
         "index": 8,
         "offset_ms": 34320,
@@ -273,12 +300,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 1470,
-        "emotion": [
-            0.07240333408117294,
-            0.3671054542064667,
-            0.5604912042617798
+        "dialog_acts": [
+            "gridspace_open_question"
         ],
+        "duration_ms": 1470,
+        "emotion": {
+            "neutral": 0.3671054542064667,
+            "negative": 0.07240333408117294,
+            "positive": 0.5604912042617798
+        },
         "human_transcript": "is there anything else i can help you with",
         "index": 9,
         "offset_ms": 36590,
@@ -311,12 +341,15 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 1890,
-        "emotion": [
-            0.027657097205519676,
-            0.28748828172683716,
-            0.6848546862602234
+        "dialog_acts": [
+            "gridspace_thanks"
         ],
+        "duration_ms": 1890,
+        "emotion": {
+            "neutral": 0.28748828172683716,
+            "negative": 0.027657097205519676,
+            "positive": 0.6848546862602234
+        },
         "human_transcript": "nope that was all i needed thank you",
         "index": 10,
         "offset_ms": 39120,
@@ -347,12 +380,16 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 1800,
-        "emotion": [
-            0.021324675530195236,
-            0.31172728538513184,
-            0.6669480204582214
+        "dialog_acts": [
+            "gridspace_thanks",
+            "gridspace_closing"
         ],
+        "duration_ms": 1800,
+        "emotion": {
+            "neutral": 0.31172728538513184,
+            "negative": 0.021324675530195236,
+            "positive": 0.6669480204582214
+        },
         "human_transcript": "thank you for calling have a great day",
         "index": 11,
         "offset_ms": 42220,
@@ -383,12 +420,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 120,
-        "emotion": [
-            0.2927926480770111,
-            0.5273181796073914,
-            0.1798892319202423
+        "dialog_acts": [
+            "gridspace_closing"
         ],
+        "duration_ms": 120,
+        "emotion": {
+            "neutral": 0.5273181796073914,
+            "negative": 0.2927926480770111,
+            "positive": 0.1798892319202423
+        },
         "human_transcript": "[noise]",
         "index": 12,
         "offset_ms": 45020,
@@ -405,12 +445,15 @@
     },
     {
         "channel_index": 1,
-        "duration_ms": 270,
-        "emotion": [
-            0.26238885521888733,
-            0.5374110341072083,
-            0.20020020008087158
+        "dialog_acts": [
+            "gridspace_closing"
         ],
+        "duration_ms": 270,
+        "emotion": {
+            "neutral": 0.5374110341072083,
+            "negative": 0.26238885521888733,
+            "positive": 0.20020020008087158
+        },
         "human_transcript": "",
         "index": 13,
         "offset_ms": 45120,
@@ -427,12 +470,15 @@
     },
     {
         "channel_index": 2,
-        "duration_ms": 30,
-        "emotion": [
-            0.0,
-            1.0,
-            0.0
+        "dialog_acts": [
+            "gridspace_closing"
         ],
+        "duration_ms": 30,
+        "emotion": {
+            "neutral": 1.0,
+            "negative": 0.0,
+            "positive": 0.0
+        },
         "human_transcript": "[noise]",
         "index": 14,
         "offset_ms": 46390,

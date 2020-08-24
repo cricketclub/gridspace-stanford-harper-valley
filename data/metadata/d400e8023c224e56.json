@@ -9,9 +9,9 @@
             {
                 "submit_time_ms": 1584311507751,
                 "data": {
-                    "transfer source account": "savings",
-                    "transfer amount": "97",
                     "transfer destination account": "checking",
+                    "transfer amount": "97",
+                    "transfer source account": "savings",
                     "task_type": "transfer money"
                 }
             }
@@ -39,9 +39,9 @@
         "survey_response": {
             "submit_time_ms": 1584311554779,
             "data": {
-                "partner_rating": "10",
                 "additional_comments": "It\u2019s fine when I am a caller.",
-                "ease_of_connection": "10"
+                "ease_of_connection": "10",
+                "partner_rating": "10"
             }
         }
     },
@@ -49,17 +49,17 @@
     "sid": "d400e8023c224e56",
     "start_time_ms": 1584311471161,
     "labels": {
-        "caller_mos": 5.0,
         "lhvb_script": 5.0,
+        "caller_mos": 5.0,
         "agent_mos": 5.0
     },
     "session": "Little Harper Valley 1",
     "tasks": [
         {
-            "transfer source account": "savings",
+            "transfer destination account": "checking",
             "transfer amount": 97,
-            "task_type": "transfer money",
-            "transfer destination account": "checking"
+            "transfer source account": "savings",
+            "task_type": "transfer money"
         }
     ]
 }
