@@ -41,7 +41,7 @@ The audio for each conversation is divided in to two single channel wav files, a
 These files contain a mix of human labels and model outputs, as well as essential timing information.
 
 ### Schema
-The transcript json files are lists of segment where each segment is a json object with the following schema:
+The transcript json files are lists of segments where each segment is a json object with the following schema:
 
 ```json
 {
@@ -84,26 +84,40 @@ The transcript json files are lists of segment where each segment is a json obje
 ```
 
 ### Field Descriptions
-- channel_index: This identifies the channel (1 is caller side and 2 is agent)
+- channel_index: This identifies the channel (1 is caller side and 2 is agent).
 - dialog_acts: This is a list of tags assigned by Gridspace's Dialog Act model.  
   Possible tags are
-  - gridspace_greeting
-  - ...
+    - gridspace_bear_with_me
+    - gridspace_filler_disfluency
+    - gridspace_yes_response
+    - gridspace_data_communication
+    - gridspace_procedure_explanation
+    - gridspace_confirm_data
+    - gridspace_acknowledgement
+    - gridspace_thanks
+    - gridspace_data_question
+    - gridspace_open_question
+    - gridspace_response
+    - gridspace_closing
+    - gridspace_problem_description
+    - gridspace_data_response
+    - gridspace_greeting
+    - gridspace_other
 - duration_ms: Duration of the call in milliseconds.
 - emotion: Softmax output of Gridspace's Emotion model, determining whether the emotional valence of the segment was positive, negative, or neutral.
 - human_transcript: Corrected transcript as determined by transcriptionists.
 - index: Index of the segment within the conversation.
-- offset_ms: Offset of the start of the segment from the beginning of the recording
-- speaker_role: Whether the speaker is the agent or the caller
-- start_ms: Offset of the start of the segment from the beginning of the conversation
-- start_timestamp_ms: Start of the segment in milliseconds since the epoch
-- transcript: Machine generated transcript
-- word_duration_ms: List of durations of the words in the machine generated transcript
-- word_offsets_ms: List of offsets of words from the segment's start in the machine generated transcript
+- offset_ms: Offset of the start of the segment from the beginning of the recording.
+- speaker_role: Whether the speaker is the agent or the caller.
+- start_ms: Offset of the start of the segment from the beginning of the conversation.
+- start_timestamp_ms: Unix timestamp for the start of the segment.
+- transcript: Machine generated transcript.
+- word_duration_ms: List of durations of the words in the machine generated transcript.
+- word_offsets_ms: List of offsets of words from the segment's start in the machine generated transcript.
 
 ## Metadata Files
 
-These files describe metadata from the Gridspace Mixer tasks used to generate the call center scenario.
+These files describe metadata from the Gridspace Mixer tasks used to generate the call center scenario, ids for the speakers involved, and additional labels from the transcriptionists.
 
 ### Schema
 Each metadata file has the following schema:
@@ -168,37 +182,41 @@ Each metadata file has the following schema:
 ```
 ### Field Descriptions
 - agent:
-  - arrival_time_ms: Unix timestamp for when the agent called in to Gridspace Mixer
-  - hangup_time_ms: Unix timestamp for when the agent hung up
-  - metadata: Metadata provided to the agent by Gridspace Mixer during the conversation
+  - arrival_time_ms: Unix timestamp for when the agent called in to Gridspace Mixer.
+  - hangup_time_ms: Unix timestamp for when the agent hung up.
+  - metadata: Metadata provided to the agent by Gridspace Mixer during the conversation.
   - responses: List of responses submitted by the agent during the conversation each with the following keys:
-    - submit_time_ms: Unix timestamp for when the data was submitted
-    - data: Data submitted by the agent. Will include task_type and possibly other details 
-  - speaker_id: Speaker ID for the agent
+    - submit_time_ms: Unix timestamp for when the data was submitted.
+    - data: Data submitted by the agent. Will include task_type and possibly other task details.
+  - speaker_id: Speaker ID for the agent.
   - survey_response: 
-    - submit_time_ms: Unix timestamp for when the agent submitted the survey
-    - data: Data submitted during the agent's survey. Will be blank if no survey was submitted
+    - submit_time_ms: Unix timestamp for when the agent submitted the survey.
+    - data: Data from the agent's survey. Will be blank if no survey was submitted.
 - caller:
-  - arrival_time_ms: Unix timestamp for when the caller called in to Gridspace Mixer
-  - hangup_time_ms: Unix timestamp for when the caller hung up
-  - metadata: Metadata provided to the caller by Gridspace Mixer during the conversation
-  - responses: List of responses submitted by the caller during the conversation.  This indicates when the Caller thought the agent had completed their task
-  - speaker_id: Speaker ID for the caller
-  - survey_response: 
-    - submit_time_ms: Unix timestamp for when the caller submitted the survey
-    - data: Data submitted during the caller's survey. Will be blank if no survey was submitted
-- end_time_ms: Unix timestamp for when the conversation ended
-- sid: Identifier for the conversation
-- start_time_ms: Unix timestamp for when the conversation started
-- labels: Labels assigned by the transcriptionists for the following categories
-  - lhvb_script: How well the caller's stuck to the provided script
-  - caller_mos: How well could the caller be understood
-  - agent_mos: How well could the agent be understood
+  - arrival_time_ms: Unix timestamp for when the caller called in to Gridspace Mixer.
+  - hangup_time_ms: Unix timestamp for when the caller hung up.
+  - metadata: Metadata provided to the caller by Gridspace Mixer during the conversation.
+  - responses: List of responses submitted by the caller during the conversation.  This indicates when the Caller thought the agent had completed their task.
+  - speaker_id: Speaker ID for the caller.
+  - survey_response:
+    - submit_time_ms: Unix timestamp for when the caller submitted the survey.
+    - data: Data from the caller's survey. Will be blank if no survey was submitted.
+- end_time_ms: Unix timestamp for when the conversation ended.
+- sid: Identifier for the conversation.
+- start_time_ms: Unix timestamp for when the conversation started.
+- labels: Labels assigned by the transcriptionists for the following categories.
+  - lhvb_script: How well the caller's stuck to the provided script.
+  - caller_mos: How well could the caller be understood.
+  - agent_mos: How well could the agent be understood.
 - session: Which session this conversation was a part of.  There were three Sessions in total.
 - tasks: Indicates which task was assigned to the caller.
     
-
 Here is a list of the possible tasks that were assigned:
+- replace card
+- transfer money
+- check balance
+- order checks
+- pay bill
+- reset password
+- schedule appointment
 - get branch hours
-- ...
-    
