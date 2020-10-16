@@ -70,23 +70,22 @@ The transcript json files are lists of segment where each segment is a json obje
 }
 ```
 
-channel_index: This identifies the channel (1 is caller side and 2 is agent)
-dialog_acts: This is a list of tags assigned by Gridspace's Dialog Act model.  
-Possible tags are
-    - gridspace_greeting
-    - ...
-
-duration_ms: Duration of the call in milliseconds.
-emotion: Softmax output of Gridspace's Emotion model, determining whether the emotional valence of the segment was positive, negative, or neutral.
-human_transcript: Corrected transcript as determined by transcriptionists.
-index: Index of the segment within the conversation.
-offset_ms: Offset of the start of the segment from the beginning of the recording
-speaker_role: Whether the speaker is the agent or the caller
-start_ms: Offset of the start of the segment from the beginning of the conversation
-start_timestamp_ms: Start of the segment in milliseconds since the epoch
-transcript: Machine generated transcript
-word_duration_ms: List of durations of the words in the machine generated transcript
-word_offsets_ms: List of offsets of words from the segment's start in the machine generated transcript
+- channel_index: This identifies the channel (1 is caller side and 2 is agent)
+- dialog_acts: This is a list of tags assigned by Gridspace's Dialog Act model.  
+  Possible tags are
+  - gridspace_greeting
+  - ...
+- duration_ms: Duration of the call in milliseconds.
+- emotion: Softmax output of Gridspace's Emotion model, determining whether the emotional valence of the segment was positive, negative, or neutral.
+- human_transcript: Corrected transcript as determined by transcriptionists.
+- index: Index of the segment within the conversation.
+- offset_ms: Offset of the start of the segment from the beginning of the recording
+- speaker_role: Whether the speaker is the agent or the caller
+- start_ms: Offset of the start of the segment from the beginning of the conversation
+- start_timestamp_ms: Start of the segment in milliseconds since the epoch
+- transcript: Machine generated transcript
+- word_duration_ms: List of durations of the words in the machine generated transcript
+- word_offsets_ms: List of offsets of words from the segment's start in the machine generated transcript
 
 Each metadata file has the following schema:
 ```json
@@ -149,38 +148,38 @@ Each metadata file has the following schema:
 }
 ```
 
-agent:
-    arrival_time_ms: Unix timestamp for when the agent called in to Gridspace Mixer
-    hangup_time_ms: Unix timestamp for when the agent hung up
-    metadata: Metadata provided to the agent by Gridspace Mixer during the conversation
-    responses: List of responses submitted by the agent during the conversation each with the following keys:
-        submit_time_ms: Unix timestamp for when the data was submitted
-        data: Data submitted by the agent. Will include task_type and possibly other details 
-    speaker_id: Speaker ID for the agent
-    survey_response: 
-        submit_time_ms: Unix timestamp for when the agent submitted the survey
-        data: Data submitted during the agent's survey. Will be blank if no survey was submitted
-caller:
-    arrival_time_ms: Unix timestamp for when the caller called in to Gridspace Mixer
-    hangup_time_ms: Unix timestamp for when the caller hung up
-    metadata: Metadata provided to the caller by Gridspace Mixer during the conversation
-    responses: List of responses submitted by the caller during the conversation.  This indicates when the Caller thought the agent had completed their task
-    speaker_id: Speaker ID for the caller
-    survey_response: 
-        submit_time_ms: Unix timestamp for when the caller submitted the survey
-        data: Data submitted during the caller's survey. Will be blank if no survey was submitted
-end_time_ms: Unix timestamp for when the conversation ended
-sid: Identifier for the conversation
-start_time_ms: Unix timestamp for when the conversation started
-labels: Labels assigned by the transcriptionists for the following categories
-    lhvb_script: How well the caller's stuck to the provided script
-    caller_mos: How well could the caller be understood
-    agent_mos: How well could the agent be understood
-session: Which session this conversation was a part of.  There were three Sessions in total.
-tasks: Indicates which task was assigned to the caller.
+- agent:
+  - arrival_time_ms: Unix timestamp for when the agent called in to Gridspace Mixer
+  - hangup_time_ms: Unix timestamp for when the agent hung up
+  - metadata: Metadata provided to the agent by Gridspace Mixer during the conversation
+  - responses: List of responses submitted by the agent during the conversation each with the following keys:
+    - submit_time_ms: Unix timestamp for when the data was submitted
+    - data: Data submitted by the agent. Will include task_type and possibly other details 
+  - speaker_id: Speaker ID for the agent
+  - survey_response: 
+    - submit_time_ms: Unix timestamp for when the agent submitted the survey
+    - data: Data submitted during the agent's survey. Will be blank if no survey was submitted
+- caller:
+  - arrival_time_ms: Unix timestamp for when the caller called in to Gridspace Mixer
+  - hangup_time_ms: Unix timestamp for when the caller hung up
+  - metadata: Metadata provided to the caller by Gridspace Mixer during the conversation
+  - responses: List of responses submitted by the caller during the conversation.  This indicates when the Caller thought the agent had completed their task
+  - speaker_id: Speaker ID for the caller
+  - survey_response: 
+    - submit_time_ms: Unix timestamp for when the caller submitted the survey
+    - data: Data submitted during the caller's survey. Will be blank if no survey was submitted
+- end_time_ms: Unix timestamp for when the conversation ended
+- sid: Identifier for the conversation
+- start_time_ms: Unix timestamp for when the conversation started
+- labels: Labels assigned by the transcriptionists for the following categories
+  - lhvb_script: How well the caller's stuck to the provided script
+  - caller_mos: How well could the caller be understood
+  - agent_mos: How well could the agent be understood
+- session: Which session this conversation was a part of.  There were three Sessions in total.
+- tasks: Indicates which task was assigned to the caller.
     
 
 Here is a list of the possible tasks that were assigned:
-    - get branch hours
-    - ...
+- get branch hours
+- ...
     
