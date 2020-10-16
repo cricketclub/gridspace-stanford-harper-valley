@@ -3,6 +3,7 @@ The Gridspace-Stanford Harper Valley speech dataset. Created in support of CS224
 
 Directory Structure:
 
+```
 data
     audio
         agent
@@ -21,6 +22,7 @@ data
         <sid1>.json
         <sid2>.json
         ...
+```
 
 Each conversation has an id referred to as it's sid.  All associated files are named based on that sid.
 Each conversation has four associated files, two audio files, one transcript file and one metadata file.
@@ -28,6 +30,7 @@ The audio for each conversation is divided in to two single channel wav files, a
 
 The transcript json files are lists of segment where each segment is a json object with the following schema:
 
+```json
 {
     "channel_index": 2,
     "dialog_acts": [
@@ -65,6 +68,7 @@ The transcript json files are lists of segment where each segment is a json obje
         1950
     ]
 }
+```
 
 channel_index: This identifies the channel (1 is caller side and 2 is agent)
 dialog_acts: This is a list of tags assigned by Gridspace's Dialog Act model.  
@@ -85,6 +89,7 @@ word_duration_ms: List of durations of the words in the machine generated transc
 word_offsets_ms: List of offsets of words from the segment's start in the machine generated transcript
 
 Each metadata file has the following schema:
+```json
 {
     "agent": {
         "arrival_time_ms": 1591056052086,
@@ -142,6 +147,7 @@ Each metadata file has the following schema:
         }
     ]
 }
+```
 
 agent:
     arrival_time_ms: Unix timestamp for when the agent called in to Gridspace Mixer
