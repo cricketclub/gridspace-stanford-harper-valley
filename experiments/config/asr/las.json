@@ -1,0 +1,49 @@
+{
+    "exp_base": null,
+    "exp_name": "harper_valley_las",
+    "system": "LAS_System",
+    "cuda": true,
+    "gpu_device": 4,
+    "seed": 1337,
+    "data_loader_workers": 8,
+    "data_params": {
+        "harpervalley_root": null,
+        "wav_maxlen": 240,
+        "transcript_maxlen": 200,
+        "n_mels": 128,
+        "min_utterance_length": 4,
+        "min_speaker_utterances": 10,
+        "speaker_split": false
+    },
+    "model_params": {
+        "listener_hidden_dim": 128,
+        "num_pyramid_layers": 3,
+        "dropout": 0,
+        "speller_hidden_dim": 256,
+        "speller_num_layers": 1,
+        "mlp_hidden_dim": 128,
+        "multi_head": 1,
+        "sample_decode": false
+    },
+    "loss_params": {
+        "label_smooth": 0.1,
+        "asr_weight": 1,
+        "task_type_weight": 1,
+        "dialog_acts_weight": 1,
+        "sentiment_weight": 1,
+        "speaker_id_weight": 1,
+        "teacher_force_prob": 0.9
+    },
+    "optim_params": {
+        "batch_size": 256,
+        "learning_rate": 5e-4,
+        "weight_decay": 0,
+        "grad_clip": 1,
+        "validate_freq": 1,
+        "patience": 10
+    },
+    "num_epochs": 200,
+    "validate": true,
+    "copy_checkpoint_freq": 5,
+    "continue_from_checkpoint": null
+}
