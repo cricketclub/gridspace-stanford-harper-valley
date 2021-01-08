@@ -8,7 +8,6 @@ Gridspace is a conversational speech and language technology company, and we pro
 
 Below we provide a walkthrough of the directories and file schemata.
 
-
 ## Directory Structure
 
 ```
@@ -220,3 +219,19 @@ Here is a list of the possible tasks that were assigned:
 - reset password
 - schedule appointment
 - get branch hours
+
+
+## How to Cite
+
+Here's the Bibtex formatted citation for the arXiv preprint (https://arxiv.org/abs/2010.13929).
+
+```latex
+@misc{wu2020harpervalleybank,
+      title={HarperValleyBank: A Domain-Specific Spoken Dialog Corpus}, 
+      author={Mike Wu and Jonathan Nafziger and Anthony Scodary and Andrew Maas},
+      year={2020},
+      eprint={2010.13929},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
+```
