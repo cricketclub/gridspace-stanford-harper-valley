@@ -4,7 +4,7 @@ The Gridspace-Stanford Harper Valley speech dataset. Created in support of CS224
 ## Dataset Overview
 The purpose of this dataset is to support education and experimentation in a wide arrange of conversational speech and language machine learning tasks. The dataset primarily consists of simulated contact center calls to Harper Valley Bank in the Gridspace Mixer platform. These task-oriented conversations have been labelled with human transcripts, timing information, emotion and dialog acts model outputs, subjective audio quality, task descriptions, and speaker identity. This provides a rich dataset for a wide array of speech and language machine learning tasks, ranging from automatic speech recognition, language processing, emotion recognition, speaker identification, text to speech, and spoken dialogue system development.
 
-Gridspace is a conversational speech and language technology company, and we provided this dataset for educational purposes originally for the 2021 incarnation of CS224S, Stanford speech machine learning class. The dataset and exploratory experiments are described in more detail in a paper posted to arXiv at https://arxiv.org/abs/2010.13929.
+Gridspace is a conversational speech and language technology company, and we provided this dataset for educational purposes originally for the 2021 incarnation of CS224S, Stanford's speech machine learning class. The dataset and exploratory experiments are described in more detail in a paper posted to arXiv at https://arxiv.org/abs/2010.13929.
 
 Below we provide a walkthrough of the directories and file schemata.
 
@@ -31,7 +31,7 @@ data
         ...
 ```
 
-Each conversation has an id referred to as it's sid.  All associated files are named based on that sid.
+Each conversation has an id referred to as its sid.  All associated files are named based on that sid.
 Each conversation has four associated files, two audio files, one transcript file and one metadata file.
 The audio for each conversation is divided in to two single channel wav files, available under the audio/agent and audio/caller directories.
 
