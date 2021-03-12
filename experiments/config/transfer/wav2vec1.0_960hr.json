@@ -1,0 +1,36 @@
+{
+    "exp_base": null,
+    "exp_name": "harper_valley_wav2vec_1.0_960hr",
+    "system": "Wav2Vec_System",
+    "cuda": true,
+    "gpu_device": 7,
+    "seed": 1337,
+    "data_loader_workers": 8,
+    "data_params": {
+        "wav2vec_path": null,
+        "harpervalley_root": null,
+        "caller_intent": null,
+        "prune_speakers": true
+    },
+    "model_params": {
+        "embedding_dim": 512
+    },
+    "loss_params": {
+        "task_weight": 1,
+        "dialogacts_weight": 1,
+        "emotion_weight": 1,
+        "speaker_weight": 1
+    },
+    "optim_params": {
+        "batch_size": 64,
+        "learning_rate": 0.01,
+	"momentum": 0.9,
+        "weight_decay": 0,
+        "validate_freq": 1,
+        "patience": 25
+    }, 
+    "num_epochs": 50,
+    "validate": true,
+    "copy_checkpoint_freq": 5,
+    "continue_from_checkpoint": null
+}

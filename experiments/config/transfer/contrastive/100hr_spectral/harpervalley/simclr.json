@@ -1,0 +1,29 @@
+{
+    "exp_base": null,
+    "exp_name": "transfer_harpervalley_simclr_100hr_spectral",
+    "system": "TransferHarperValleySystem",
+    "cuda": true,
+    "gpu_device": 0,
+    "seed": 1337,
+    "data_loader_workers": 8,
+    "data_params": {
+        "harpervalley_root": null,
+        "caller_intent": null
+    },
+    "pretrain_model": {
+        "exp_dir": null,
+        "checkpoint_name": "epoch=199.ckpt"
+    },
+    "optim_params": {
+        "batch_size": 256,
+        "learning_rate": 0.01,
+        "momentum": 0.9,
+        "weight_decay": 0,
+        "validate_freq": 1,
+        "patience": 10
+    },
+    "num_epochs": 100,
+    "validate": true,
+    "copy_checkpoint_freq": 5,
+    "continue_from_checkpoint": null
+}
