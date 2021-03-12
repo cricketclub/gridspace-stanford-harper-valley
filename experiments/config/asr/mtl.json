@@ -1,5 +1,5 @@
 {
-    "exp_base": "/mnt/fs5/wumike/cs224s/trained_models/3_4",
+    "exp_base": null,
     "exp_name": "harper_valley_mtl",
     "system": "MTL_System",
     "cuda": true,
@@ -7,7 +7,7 @@
     "seed": 1337,
     "data_loader_workers": 8,
     "data_params": {
-        "harpervalley_root": "/data2/wumike/harper_valley/gridspace-stanford-harper-valley/data",
+        "harpervalley_root": null,
         "wav_maxlen": 500,
         "transcript_maxlen": 200,
         "n_mels": 128,
@@ -17,7 +17,7 @@
         "min_utterance_length": 4,
         "min_speaker_utterances": 10,
         "speaker_split": true,
-				"append_eos_token": true
+		"append_eos_token": true
     },
     "model_params": {
         "listener_hidden_dim": 256,
@@ -28,18 +28,17 @@
         "multi_head": 1
     },
     "loss_params": {
-        "label_smooth": 0,
-        "asr_weight": 0.2,
-        "task_type_weight": 0.2,
-        "dialog_acts_weight": 0.2,
-        "sentiment_weight": 0.2,
-        "speaker_id_weight": 0.2,
-        "teacher_force_prob": 0.9,
-        "alpha": 0.2
+        "label_smooth": 0.1,
+        "asr_weight": 0.7,
+        "task_type_weight": 0.1,
+        "dialog_acts_weight": 0.1,
+        "sentiment_weight": 0.1,
+        "teacher_force_prob": 0.5,
+        "alpha": 0.7
     },
     "optim_params": {
-        "batch_size": 256,
-        "learning_rate": 5e-4,
+        "batch_size": 128,
+        "learning_rate": 1e-3,
         "weight_decay": 0,
         "grad_clip": 1,
         "validate_freq": 1,
