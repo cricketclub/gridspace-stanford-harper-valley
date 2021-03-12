@@ -1,6 +1,6 @@
 {
     "exp_base": null,
-    "exp_name": "harper_valley_las",
+    "exp_name": "harper_valley_tf_0.3",
     "system": "LAS_System",
     "cuda": true,
     "gpu_device": 4,
@@ -17,7 +17,7 @@
         "min_utterance_length": 4,
         "min_speaker_utterances": 10,
         "speaker_split": true,
-		"append_eos_token": true
+        "append_eos_token": true
     },
     "model_params": {
         "listener_hidden_dim": 128,
@@ -33,7 +33,7 @@
         "task_type_weight": 0.1,
         "dialog_acts_weight": 0.1,
         "sentiment_weight": 0.1,
-        "teacher_force_prob": 0.5
+        "teacher_force_prob": 0.3
     },
     "optim_params": {
         "batch_size": 128,

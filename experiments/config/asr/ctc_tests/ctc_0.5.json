@@ -1,11 +1,11 @@
 {
     "exp_base": null,
-    "exp_name": "harper_valley_las",
-    "system": "LAS_System",
+    "exp_name": "harper_valley_ctc_0.5",
+    "system": "CTC_System",
     "cuda": true,
-    "gpu_device": 4,
+    "gpu_device": 7,
     "seed": 1337,
-    "data_loader_workers": 8,
+    "data_loader_workers": 4,
     "data_params": {
         "harpervalley_root": null,
         "wav_maxlen": 500,
@@ -17,31 +17,25 @@
         "min_utterance_length": 4,
         "min_speaker_utterances": 10,
         "speaker_split": true,
-		"append_eos_token": true
+		"append_eos_token": false
     },
     "model_params": {
-        "listener_hidden_dim": 128,
-        "listener_num_layers": 2,
-        "listener_bidirectional": true,
-        "speller_num_layers": 1,
-        "mlp_hidden_dim": 128,
-        "multi_head": 1
+        "num_layers": 2,
+        "hidden_dim": 512,
+        "bidirectional": true
     },
     "loss_params": {
-        "label_smooth": 0.1,
-        "asr_weight": 0.7,
-        "task_type_weight": 0.1,
-        "dialog_acts_weight": 0.1,
-        "sentiment_weight": 0.1,
-        "teacher_force_prob": 0.5
+        "asr_weight": 0.5,
+        "task_type_weight": 0.16,
+        "dialog_acts_weight": 0.16,
+        "sentiment_weight": 0.17
     },
     "optim_params": {
         "batch_size": 128,
         "learning_rate": 1e-3,
         "weight_decay": 0,
         "grad_clip": 1,
-        "validate_freq": 1,
-        "patience": 10
+        "validate_freq": 5
     },
     "num_epochs": 200,
     "validate": true,

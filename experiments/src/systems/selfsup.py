@@ -5,7 +5,7 @@ include cropping, noise, pitch, and speed. We should fit this on Librispeech.
 
 import os
 import math
-import faiss
+# import faiss
 import random
 import librosa
 import numpy as np
@@ -23,22 +23,18 @@ import torchvision
 
 from src.datasets.harper_valley import HarperValleyContrastiveTransfer
 from src.datasets.librispeech import (
-    LibriSpeech,
-    LibriSpeechTransfer,
-    LibriSpeechTwoViews,
-)
-from src.models.tasks import (
+    LibriSpeech, LibriSpeechTransfer, LibriSpeechTwoViews)
+from src.models.recognition.tasks import (
     TaskTypePredictor,
     DialogActsPredictor,
     SentimentPredictor,
     SpeakerIdPredictor,
 )
-from src.models.logreg import LogisticRegression
-from src.models.resnet import resnet18
-from src.models import resnet_small
+from src.models.selfsup.logreg import LogisticRegression
+from src.models.selfsup.resnet import resnet18
+from src.models.selfsup import resnet_small
 from src.utils import l2_normalize, frozen_params, load_json
 from src.systems.recognition import create_dataloader
-from src.models.las import Listener
 from src.utils import concat_all_gather
 
 import pytorch_lightning as pl
@@ -131,8 +127,8 @@ class InstDiscSystem(pl.LightningModule):
 
     def training_step(self, batch, batch_idx):
         loss = self.get_losses_for_batch(batch)
-        metrics = {'loss': loss}
-        return {'loss': loss, 'log': metrics}
+        self.log('train_loss', loss, prog_bar=True, on_step=True)
+        return loss
 
     def get_nearest_neighbor_label(self, embs, labels):
         """
@@ -160,18 +156,15 @@ class InstDiscSystem(pl.LightningModule):
         num_correct, batch_size = self.get_nearest_neighbor_label(outputs, speaker_ids)
         num_correct = torch.tensor(num_correct, dtype=float, device=self.device)
         batch_size = torch.tensor(batch_size, dtype=float, device=self.device)
-        return OrderedDict({'val_num_correct': num_correct,
-                            'val_num_total': batch_size})
+        metrics = {'val_num_correct': num_correct, 'val_num_total': batch_size}
+        return metrics
 
     def validation_epoch_end(self, outputs):
-        metrics = {}
-        for key in outputs[0].keys():
-            metrics[key] = torch.stack([elem[key] for elem in outputs]).mean()
         num_correct = torch.stack([out['val_num_correct'] for out in outputs]).sum()
         num_total = torch.stack([out['val_num_total'] for out in outputs]).sum()
         val_acc = num_correct / float(num_total)
-        metrics['val_acc'] = val_acc
-        return {'log': metrics, 'val_acc': val_acc} 
+        self.log('val_acc', val_acc, prog_bar=True)
+        return metrics
 
     def train_dataloader(self):
         return create_dataloader(self.train_dataset, self.config)
@@ -229,8 +222,8 @@ class LocalAggSystem(InstDiscSystem):
                              gpu_device=self.config.faiss_gpu_device)
             self.cluster_labels = self.km.compute_clusters()
 
-        metrics = {'loss': loss}
-        return {'loss': loss, 'log': metrics}
+        self.log('train_loss', loss, prog_bar=True, on_step=True)
+        return loss
 
 
 class SimCLRSystem(InstDiscSystem):
@@ -407,11 +400,17 @@ class TransferBaseSystem(pl.LightningModule):
         self.train_dataset, self.val_dataset = self.create_datasets()
         self.model = self.create_model()
 
+    def create_datasets(self):
+        raise NotImplementedError
+
+    def create_model(self):
+        raise NotImplementedError
+
     def load_embedding_size(self):
         resnet = self.pretrain_config.model_params.resnet_version
         base_feature_dict = {'resnet18': 512, 'resnet50': 2048}
         if self.pretrain_config.model_params.resnet_small:
-            num_features = base_feature_dict['resnet18'] * 4 * 4
+            num_features = 512 * 4 * 4  # hardcoded resnet18 
         else:
             num_features = base_feature_dict[resnet] * 4 * 4
         return num_features
@@ -505,27 +504,32 @@ class TransferLibriSpeechSystem(TransferBaseSystem):
                 'train_num_total': num_total,
                 'train_acc': num_correct / float(num_total),
             }
-        return {'loss': loss, 'log': metrics}
+        self.log_dict(metrics)
+        self.log('train_loss', metrics['train_loss'], prog_bar=True, on_step=True)
+        self.log('train_acc', metrics['train_acc'], prog_bar=True, on_step=True)
+        return loss
 
     def validation_step(self, batch, batch_idx):
         loss = self.get_losses_for_batch(batch)
         num_correct, num_total = self.get_accuracies_for_batch(batch)
-        return OrderedDict({
+        metrics = {
             'val_loss': loss,
             'val_num_correct': num_correct,
             'val_num_total': num_total,
-            'val_acc': num_correct / float(num_total)
-        })
+        }
+        return metrics
 
     def validation_epoch_end(self, outputs):
-        metrics = {}
-        for key in outputs[0].keys():
-            metrics[key] = torch.tensor([elem[key] for elem in outputs]).float().mean()
         num_correct = sum([out['val_num_correct'] for out in outputs])
         num_total = sum([out['val_num_total'] for out in outputs])
-        val_acc = num_correct / float(num_total)
-        metrics['val_acc'] = val_acc
-        return {'val_loss': metrics['val_loss'], 'log': metrics, 'val_acc': val_acc}
+        metrics = {
+            'val_loss': torch.tensor([elem['val_loss'] for elem in outputs]).float().mean(),
+            'val_acc': num_correct / float(num_total)
+        }
+        self.log_dict(metrics)
+        self.log('val_loss', metrics['val_loss'], prog_bar=True)
+        self.log('val_acc', metrics['val_acc'], prog_bar=True)
+        return metrics
 
 
 class TransferHarperValleySystem(TransferBaseSystem):
@@ -580,10 +584,7 @@ class TransferHarperValleySystem(TransferBaseSystem):
         return log_probs
 
     def get_losses_and_metrics_for_batch(self, batch, train=True):
-        indices = batch[0].to(self.device)
-        inputs = batch[1].to(self.device)
-        labels = batch[2].to(self.device)
-
+        indices, inputs, labels = batch
         batch_size = indices.size(0)
         caller_intent = self.config.data_params.caller_intent
 
@@ -618,6 +619,7 @@ class TransferHarperValleySystem(TransferBaseSystem):
                 f'{prefix}_loss': loss,
                 f'{prefix}_num_correct': num_correct,
                 f'{prefix}_num_total': num_total,
+                f'{prefix}_acc': num_correct / float(num_total),
             }
             if not train:
                 if caller_intent == 'dialog_acts':
@@ -629,12 +631,14 @@ class TransferHarperValleySystem(TransferBaseSystem):
 
     def training_step(self, batch, batch_idx):
         loss, metrics = self.get_losses_and_metrics_for_batch(batch, train=True)
-        return {'loss': loss, 'log': metrics}
+        self.log_dict(metrics)
+        self.log('train_loss', metrics['train_loss'], prog_bar=True, on_step=True)
+        self.log('train_acc', metrics['train_acc'], prog_bar=True, on_step=True)
+        return loss
 
     def validation_step(self, batch, batch_idx):
-        loss, metrics = self.get_losses_and_metrics_for_batch(batch, train=False)
-        metrics['val_loss'] = loss
-        return OrderedDict(metrics)
+        _, metrics = self.get_losses_and_metrics_for_batch(batch, train=False)
+        return metrics
 
     def validation_epoch_end(self, outputs):
         metrics = {}
@@ -660,7 +664,9 @@ class TransferHarperValleySystem(TransferBaseSystem):
             metrics[f'val_f1'] = np.mean(f1_scores)
             print(f'\nF1:{metrics[f"val_f1"]}')
 
-        return {'val_loss': metrics['val_loss'], 'log': metrics}
+        self.log_dict(metrics)
+        self.log('val_loss', metrics['val_loss'], prog_bar=True)
+        self.log('val_acc', metrics['val_acc'], prog_bar=True)
 
 
 class MemoryBank(nn.Module):

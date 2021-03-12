@@ -16,24 +16,17 @@ import nlpaug.augmenter.spectrogram as nas
 from torchvision.transforms import Normalize
 
 from torch.utils.data import Dataset
-from src.datasets.librispeech import (
-    WavformAugmentation,
-    SpectrumAugmentation,
-)
+from src.datasets.librispeech import WavformAugmentation, SpectrumAugmentation
 
 HARPER_VALLEY_MEAN = [-29.436176]
 HARPER_VALLEY_STDEV = [14.90793]
-HARPER_VALLEY_HOP_LENGTH_DICT = {
-    224: 672, 
-    112: 1344, 
-    64: 2360, 
-    32: 4800,
-}
+HARPER_VALLEY_HOP_LENGTH_DICT = {224: 672, 112: 1344, 64: 2360, 32: 4800}
 
-# I fetched from the dataset itself (all lowered cased)
 VOCAB = [' ',"'",'~','-','.','<','>','[',']','a','b','c','d','e','f','g',
          'h','i','j','k','l','m','n','o','p','q','r','s','t','u','v',
          'w','x','y','z']
+SILENT_VOCAB = ['[baby]', '[ringing]', '[laughter]', '[kids]', '[music]', 
+                '[noise]', '[unintelligible]', '[dogs]', '[cough]']
 
 
 class BaseHarperValley(Dataset):
@@ -293,14 +286,26 @@ class BaseHarperValley(Dataset):
         assert len(invalid_speaker_ids) == 0
         return task_vocab, dialogact_vocab, valid_speaker_ids
 
-    def transcripts_to_labels(self, texts):
-        # Convert text strings to a list of indices representing characters.
-        labels = []
-        for text in texts:
-            chars = list(text)
-            label = [VOCAB.index(ch) for ch in chars]
-            labels.append(label)
-        return labels
+    def transcripts_to_labels(self, transcripts):
+        """Converts transcript texts to sequences of vocab indices for characters."""
+        transcript_labels = []
+        for transcript in transcripts:
+            words = transcript.split()
+            labels = []
+            for i in range(len(words)):
+                word = words[i]
+                if word in SILENT_VOCAB:
+                    # silent vocab builds on top of vocab
+                    label = SILENT_VOCAB.index(word) + len(VOCAB)
+                    labels.append(label)
+                else:
+                    chars = list(word)
+                    labels.extend([VOCAB.index(ch) for ch in chars])
+                # add a space in between words
+                labels.append(VOCAB.index(' '))
+            labels = labels[:-1]  # remove last space
+            transcript_labels.append(labels)
+        return transcript_labels
 
     def task_type_to_labels(self, tasks, vocab):
         return [vocab.index(task) for task in tasks]
@@ -333,10 +338,10 @@ class BaseHarperValley(Dataset):
 class HarperValley(BaseHarperValley):
     """Dataset to be used to train CTC, LAS, and MTL. 
 
-    @param inputs_maxlen (default: None)
-                         Maximum number of tokens in the wav input.
-    @param labels_maxlen (default: None)
-                         Maximum number of tokens in the labels output.
+    @param wav_maxlen: integer (default: None)
+                       Maximum number of tokens in the wav input.
+    @param transcript_maxlen: integer (default: None)
+                              Maximum number of tokens in the labels output.
     @param add_sos_and_eos_tok: boolean (default: False)
                                 Whether to prepend SOS token and append with EOS token.
                                 Required for LAS and MTL.
@@ -353,11 +358,13 @@ class HarperValley(BaseHarperValley):
             root, 
             split='train', 
             n_mels=128,
-            wav_maxlen=200,
+            n_fft=256, 
+            win_length=256, 
+            hop_length=128,
+            wav_maxlen=500,
             transcript_maxlen=200,
-            add_sos_and_eos_tok=False,
-            add_eps_tok=False,
-            split_by_speaker=False,
+            append_eos_token=False,
+            split_by_speaker=True,
             min_utterance_length=4,
             min_speaker_utterances=10,
             prune_speakers=True,
@@ -395,50 +402,33 @@ class HarperValley(BaseHarperValley):
         speaker_id_labels = self.speaker_id_to_labels(speaker_ids, speaker_id_set)
         sentiment_labels = sentiments
 
-        if add_eps_tok and add_sos_and_eos_tok:
-            # add 3 because reserve 0 for epsilon, 1 for sos and 2 for eos
-            human_transcript_labels = [list(np.array(lab) + 3) 
-                                       for lab in human_transcript_labels]
-            eps_index, sos_index, eos_index = 0, 1, 2
-        elif add_eps_tok:
-            # add 1 bc we reserve 0 for epsilon
-            human_transcript_labels = [list(np.array(lab) + 1) 
-                                       for lab in human_transcript_labels]
-            eps_index = 0
-        elif add_sos_and_eos_tok:
-            # add 2 bc we reserve 0 for sos and 1 for eos
-            human_transcript_labels = [list(np.array(lab) + 2) 
-                                       for lab in human_transcript_labels]
-            sos_index, eos_index = 0, 1
+        # Increment all indices by 4 to reserve the following special tokens:
+        #   0 for epsilon
+        #   1 for start-of-sentence (SOS)
+        #   2 for end-of-sentence (EOS)
+        #   3 for padding 
+        num_special_tokens = 4
+        human_transcript_labels = [list(np.array(lab) + 3) 
+                                   for lab in human_transcript_labels]
+        eps_index, sos_index, eos_index, pad_index = 0, 1, 2, 3
 
-        if add_sos_and_eos_tok:
+        if append_eos_token:
             # Add a EOS token to the end of all the labels
             # This is important for the sequential decoding objective
-            print("Adding EOS token to all labels.")
             human_transcript_labels_ = []
             for i in range(len(human_transcript_labels)):
                 new_label_i = human_transcript_labels[i] + [eos_index]  # eos_token
                 human_transcript_labels_.append(new_label_i)
             human_transcript_labels = human_transcript_labels_
 
-        if add_eps_tok and add_sos_and_eos_tok:
-            self.num_class = len(VOCAB) + 3  # eps/sos/eos
-            self.eps_index = eps_index
-            self.sos_index = sos_index
-            self.eos_index = eos_index
-            self.pad_index = sos_index
-        elif add_eps_tok:
-            self.num_class = len(VOCAB) + 1  # epsilon
-            self.eps_index = eps_index
-        elif add_sos_and_eos_tok:
-            self.num_class = len(VOCAB) + 2  # sos/eos
-            self.sos_index = sos_index
-            self.eos_index = eos_index
-            self.pad_index = sos_index
+        self.num_class = len(VOCAB) + len(SILENT_VOCAB) + num_special_tokens
+        self.eps_index = eps_index
+        self.sos_index = sos_index
+        self.eos_index = eos_index
+        self.pad_index = pad_index
 
         self.root = root
-        self.add_eps_tok = add_eps_tok
-        self.add_sos_and_eos_tok = add_sos_and_eos_tok
+        self.append_eos_token = append_eos_token
         self.wavpaths = wavpaths
         self.human_transcript_labels = human_transcript_labels
         self.task_type_labels = task_type_labels
@@ -458,6 +448,15 @@ class HarperValley(BaseHarperValley):
         self.input_dim = n_mels
         self.num_labels = self.num_class
         self.n_mels = n_mels
+        self.n_fft = n_fft
+        self.win_length = win_length
+        self.hop_length = hop_length
+
+    def indices_to_chars(self, indices):
+        # add special characters in front (since we did this above)
+        full_vocab = ['<eps>', '<sos>', '<eos>', '<pad>'] + VOCAB + SILENT_VOCAB
+        chars = [full_vocab[ind] for ind in indices]
+        return chars
 
     def train_test_split(
             self,
@@ -546,9 +545,9 @@ class HarperValley(BaseHarperValley):
         return train_data, val_data, test_data
 
     @staticmethod
-    def pad_wav(wav, maxlen):
+    def pad_wav(wav, maxlen, pad=0):
         dim = wav.shape[1]
-        padded = np.zeros((maxlen, dim))
+        padded = np.zeros((maxlen, dim)) + pad
         if len(wav) > maxlen:
             wav = wav[:maxlen]
         length = len(wav)
@@ -556,8 +555,8 @@ class HarperValley(BaseHarperValley):
         return padded, length
     
     @staticmethod
-    def pad_transcript_labels(transcript_labels, maxlen):
-        padded = np.zeros(maxlen) - 1
+    def pad_transcript_labels(transcript_labels, maxlen, pad=-1):
+        padded = np.zeros(maxlen) + pad
         if len(transcript_labels) > maxlen:
             transcript_labels = transcript_labels[:maxlen]
         length = len(transcript_labels)
@@ -585,8 +584,11 @@ class HarperValley(BaseHarperValley):
             y=wav_crop, 
             sr=sr,
             n_mels=self.n_mels,
+            n_fft=self.n_fft, 
+            win_length=self.win_length, 
+            hop_length=self.hop_length,
         )
-        wav_logmel = np.log(wav_mel + 1e-9)
+        wav_logmel = np.log(wav_mel + 1e-7)
         wav_logmel = librosa.util.normalize(wav_logmel).T
 
         # pad to a fixed length
@@ -595,9 +597,7 @@ class HarperValley(BaseHarperValley):
         human_transcript_label = self.human_transcript_labels[index]
         # pad transcript to a fixed length
         human_transcript_label, human_transcript_length = self.pad_transcript_labels(
-            human_transcript_label, 
-            self.transcript_maxlen,
-        )
+            human_transcript_label, self.transcript_maxlen, pad=self.pad_index)
         
         task_type_label = self.task_type_labels[index]
         dialog_acts_label = self.dialog_acts_labels[index]
@@ -620,10 +620,18 @@ class HarperValley(BaseHarperValley):
         dialog_acts_label = torch.LongTensor(dialog_acts_label)
         sentiment_label = torch.FloatTensor(sentiment_label)
 
-        return (index, wav_logmel, wav_length, 
-                human_transcript_label, human_transcript_length,
-                task_type_label, dialog_acts_label, 
-                sentiment_label, speaker_id_label)
+        example = {
+            'indices': index, 
+            'inputs': wav_logmel, 
+            'input_lengths': wav_length, 
+            'labels': human_transcript_label, 
+            'label_lengths': human_transcript_length,
+            'task_types': task_type_label, 
+            'dialog_acts': dialog_acts_label, 
+            'sentiments': sentiment_label,
+            'speaker_ids': speaker_id_label,
+        }
+        return example
 
     def __len__(self):
         return len(self.wavpaths)

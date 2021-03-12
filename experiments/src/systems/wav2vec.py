@@ -147,6 +147,7 @@ class Wav2Vec_System(pl.LightningModule):
                 f'{prefix}_loss': loss,
                 f'{prefix}_num_correct': num_correct,
                 f'{prefix}_num_total': num_total,
+                f'{prefix}_acc': num_correct / float(num_total),
             }
             if not train:
                 if caller_intent == 'dialogacts':
@@ -158,12 +159,14 @@ class Wav2Vec_System(pl.LightningModule):
 
     def training_step(self, batch, batch_idx):
         loss, metrics = self.get_losses_and_metrics_for_batch(batch, train=True)
-        return {'loss': loss, 'log': metrics}
+        self.log_dict(metrics)
+        self.log('train_loss', metrics['train_loss'], prog_bar=True, on_step=True)
+        self.log('train_acc', metrics['train_acc'], prog_bar=True, on_step=True)
+        return loss
 
     def validation_step(self, batch, batch_idx):
-        loss, metrics = self.get_losses_and_metrics_for_batch(batch, train=False)
-        metrics['val_loss'] = loss
-        return OrderedDict(metrics)
+        _, metrics = self.get_losses_and_metrics_for_batch(batch, train=False)
+        return metrics
 
     def validation_epoch_end(self, outputs):
         metrics = {}
@@ -188,7 +191,9 @@ class Wav2Vec_System(pl.LightningModule):
             f1_scores = np.array(f1_scores)
             metrics[f'val_f1'] = np.mean(f1_scores)
 
-        return {'val_loss': metrics['val_loss'], 'log': metrics}
+        self.log_dict(metrics)
+        self.log('val_loss', metrics['val_loss'], prog_bar=True)
+        self.log('val_acc', metrics['val_acc'], prog_bar=True)
 
     def train_dataloader(self):
         return create_dataloader(self.train_dataset, self.config)

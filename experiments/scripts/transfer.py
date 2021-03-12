@@ -2,6 +2,7 @@ import os
 import torch
 import numpy
 import random
+import getpass
 from copy import deepcopy
 from src.systems.wav2vec import *
 from src.systems.selfsup import *
@@ -20,14 +21,16 @@ def run(config_path, caller_intent=None, gpu_device=-1):
     SystemClass = globals()[config.system]
     system = SystemClass(config)
 
+    # TODO: adjust period for saving checkpoints.
     ckpt_callback = pl.callbacks.ModelCheckpoint(
         os.path.join(config.exp_dir, 'checkpoints'),
         save_top_k=-1,
         period=1,
     )
     wandb.init(
-        project='speech', 
-        entity='testuser', 
+        project='hvb_speech', 
+        entity=getpass.getuser(), 
+        dir='/mnt/fs5/wumike/wandb/speech',
         name=config.exp_name, 
         config=config, 
         sync_tensorboard=True,

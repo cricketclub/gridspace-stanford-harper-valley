@@ -1,6 +1,6 @@
 {
     "exp_base": null,
-    "exp_name": "harper_valley_las",
+    "exp_name": "harper_valley_las_0.1",
     "system": "LAS_System",
     "cuda": true,
     "gpu_device": 4,
@@ -29,11 +29,11 @@
     },
     "loss_params": {
         "label_smooth": 0.1,
-        "asr_weight": 0.7,
-        "task_type_weight": 0.1,
-        "dialog_acts_weight": 0.1,
-        "sentiment_weight": 0.1,
-        "teacher_force_prob": 0.5
+        "asr_weight": 0.1,
+        "task_type_weight": 0.3,
+        "dialog_acts_weight": 0.3,
+        "sentiment_weight": 0.3,
+        "teacher_force_prob": 0.9
     },
     "optim_params": {
         "batch_size": 128,

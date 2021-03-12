@@ -89,25 +89,20 @@ def edit_distance(src_seq, tgt_seq):
     return dist
 
 
-def levenshtein(a,b):
-    "Calculates the Levenshtein distance between a and b."
-    n, m = len(a), len(b)
-    if n > m:
-        # Make sure n <= m, to use O(min(n,m)) space
-        a,b = b,a
-        n,m = m,n
-        
-    current = range(n+1)
-    for i in range(1,m+1):
-        previous, current = current, [i]+[0]*n
-        for j in range(1,n+1):
-            add, delete = previous[j]+1, current[j-1]+1
-            change = previous[j-1]
-            if a[j-1] != b[i-1]:
-                change = change + 1
-            current[j] = min(add, delete, change)
-            
-    return current[n]
+def get_cer(hypotheses, hypothesis_lengths, references, reference_lengths):
+    assert len(hypotheses) == len(references)
+    cer = []
+    for i in range(len(hypotheses)):
+        if len(hypotheses[i]) > 0:
+            dist_i = edit_distance(
+                hypotheses[i][:hypothesis_lengths[i]],
+                references[i][:reference_lengths[i]],
+            )
+            # CER divides the edit distance by the length of the true sequence
+            cer.append((dist_i[-1, -1] / float(reference_lengths[i])))
+        else:
+            cer.append(1)  # since we predicted empty 
+    return np.mean(cer)
 
 
 def l2_normalize(x, dim=1):

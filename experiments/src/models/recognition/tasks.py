@@ -71,3 +71,4 @@ class SpeakerIdPredictor(nn.Module):
 
     def get_loss(self, log_probs, targets):
         return F.nll_loss(log_probs, targets)
+

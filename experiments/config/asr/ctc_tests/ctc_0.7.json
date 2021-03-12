@@ -1,6 +1,6 @@
 {
     "exp_base": null,
-    "exp_name": "harper_valley_ctc_speaker_split",
+    "exp_name": "harper_valley_ctc_0.7",
     "system": "CTC_System",
     "cuda": true,
     "gpu_device": 7,
@@ -8,33 +8,35 @@
     "data_loader_workers": 4,
     "data_params": {
         "harpervalley_root": null,
-        "wav_maxlen": 240,
+        "wav_maxlen": 500,
         "transcript_maxlen": 200,
         "n_mels": 128,
+        "n_fft": 256,
+        "win_length": 128,
+        "hop_length": 128,
         "min_utterance_length": 4,
         "min_speaker_utterances": 10,
-        "speaker_split": true
+        "speaker_split": true,
+		"append_eos_token": false
     },
     "model_params": {
         "num_layers": 2,
-        "hidden_dim": 256,
+        "hidden_dim": 512,
         "bidirectional": true
     },
     "loss_params": {
-        "asr_weight": 1,
-        "task_type_weight": 1,
-        "dialog_acts_weight": 1,
-        "sentiment_weight": 1,
-        "speaker_id_weight": 1
+        "asr_weight": 0.7,
+        "task_type_weight": 0.1,
+        "dialog_acts_weight": 0.1,
+        "sentiment_weight": 0.1
     },
     "optim_params": {
-        "batch_size": 256,
+        "batch_size": 128,
         "learning_rate": 1e-3,
-        "weight_decay": 1e-5,
+        "weight_decay": 0,
         "grad_clip": 1,
-        "validate_freq": 5,
-        "patience": 25
-    }, 
+        "validate_freq": 5
+    },
     "num_epochs": 200,
     "validate": true,
     "copy_checkpoint_freq": 5,
