@@ -1,0 +1,50 @@
+{
+    "exp_base": "/mnt/fs5/wumike/cs224s/trained_models/3_4",
+    "exp_name": "harper_valley_las_0.0",
+    "system": "LAS_System",
+    "cuda": true,
+    "gpu_device": 4,
+    "seed": 1337,
+    "data_loader_workers": 8,
+    "data_params": {
+        "harpervalley_root": "/data2/wumike/harper_valley/gridspace-stanford-harper-valley/data",
+        "wav_maxlen": 500,
+        "transcript_maxlen": 200,
+        "n_mels": 128,
+        "n_fft": 256,
+        "win_length": 128,
+        "hop_length": 128,
+        "min_utterance_length": 4,
+        "min_speaker_utterances": 10,
+        "speaker_split": true,
+		"append_eos_token": true
+    },
+    "model_params": {
+        "listener_hidden_dim": 128,
+        "listener_num_layers": 2,
+        "listener_bidirectional": true,
+        "speller_num_layers": 1,
+        "mlp_hidden_dim": 128,
+        "multi_head": 1
+    },
+    "loss_params": {
+        "label_smooth": 0.1,
+        "asr_weight": 0.0,
+        "task_type_weight": 0.33,
+        "dialog_acts_weight": 0.33,
+        "sentiment_weight": 0.34,
+        "teacher_force_prob": 0.9
+    },
+    "optim_params": {
+        "batch_size": 128,
+        "learning_rate": 1e-3,
+        "weight_decay": 0,
+        "grad_clip": 1,
+        "validate_freq": 1,
+        "patience": 10
+    },
+    "num_epochs": 200,
+    "validate": true,
+    "copy_checkpoint_freq": 5,
+    "continue_from_checkpoint": null
+}

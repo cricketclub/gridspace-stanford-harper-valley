@@ -1,0 +1,44 @@
+{
+    "exp_base": "/mnt/fs5/wumike/cs224s/trained_models/3_4",
+    "exp_name": "harper_valley_ctc_0.9",
+    "system": "CTC_System",
+    "cuda": true,
+    "gpu_device": 7,
+    "seed": 1337,
+    "data_loader_workers": 4,
+    "data_params": {
+        "harpervalley_root": "/data2/wumike/harper_valley/gridspace-stanford-harper-valley/data",
+        "wav_maxlen": 500,
+        "transcript_maxlen": 200,
+        "n_mels": 128,
+        "n_fft": 256,
+        "win_length": 128,
+        "hop_length": 128,
+        "min_utterance_length": 4,
+        "min_speaker_utterances": 10,
+        "speaker_split": true,
+		"append_eos_token": false
+    },
+    "model_params": {
+        "num_layers": 2,
+        "hidden_dim": 512,
+        "bidirectional": true
+    },
+    "loss_params": {
+        "asr_weight": 0.9,
+        "task_type_weight": 0.03,
+        "dialog_acts_weight": 0.03,
+        "sentiment_weight": 0.04
+    },
+    "optim_params": {
+        "batch_size": 128,
+        "learning_rate": 1e-3,
+        "weight_decay": 0,
+        "grad_clip": 1,
+        "validate_freq": 5
+    },
+    "num_epochs": 200,
+    "validate": true,
+    "copy_checkpoint_freq": 5,
+    "continue_from_checkpoint": null
+}

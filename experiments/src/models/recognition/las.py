@@ -5,11 +5,12 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.nn.utils.rnn as rnn_utils
+from torch.distributions import Categorical
 
 from src.utils import edit_distance
 
 
-class ListenAttendSpell(nn.Module):
+class LASEncoderDecoder(nn.Module):
 
     def __init__(
             self,
@@ -17,33 +18,29 @@ class ListenAttendSpell(nn.Module):
             num_class,
             label_maxlen,
             listener_hidden_dim=256,
-            num_pyramid_layers=3,
-            dropout=0,
-            speller_hidden_dim=512,
+            listener_num_layers=2,
+            listener_bidirectional=True,
             speller_num_layers=1,
             mlp_hidden_dim=128,
             multi_head=1,
             sos_index=0,
-            sample_decode=False,
         ):
         super().__init__()
 
         self.listener = Listener(
             input_dim,
-            listener_hidden_dim,
-            num_pyramid_layers=num_pyramid_layers,
-            dropout=dropout,
+            hidden_dim=listener_hidden_dim,
+            num_pyramid_layers=listener_num_layers,
+            bidirectional=listener_bidirectional,
         )
         self.speller = Speller(
             num_class,
             label_maxlen,
-            speller_hidden_dim,
             listener_hidden_dim,
             mlp_hidden_dim,
             num_layers=speller_num_layers,
             multi_head=multi_head,
             sos_index=sos_index,
-            sample_decode=sample_decode,
         )
         self.embedding_dim = listener_hidden_dim * 4
 
@@ -58,17 +55,19 @@ class ListenAttendSpell(nn.Module):
     def forward(
             self,
             inputs,
+            input_lengths,
             ground_truth=None,
             teacher_force_prob=0.9,
         ):
-        listener_feats, (listener_h, listener_c) = self.listener(inputs)
-        listener_hc = self.combine_h_and_c(listener_h, listener_c)
+        listener_feats, (listener_h, listener_c) = self.listener(
+            inputs, input_lengths)
+        embedding = self.combine_h_and_c(listener_h, listener_c)
         log_probs = self.speller(
             listener_feats,
             ground_truth=ground_truth,
             teacher_force_prob=teacher_force_prob,
         )
-        return log_probs, listener_hc
+        return log_probs, embedding
 
     def get_loss(
             self,
@@ -82,67 +81,104 @@ class ListenAttendSpell(nn.Module):
         labels_maxlen = labels.size(1)
 
         if label_smooth == 0.0:
-            loss = F.nll_loss(
-                log_probs.view(batch_size * labels_maxlen, -1),
-                labels.long().view(batch_size * labels_maxlen),
-                ignore_index=pad_index,
-            )
+            log_probs = log_probs.view(batch_size * labels_maxlen, -1)
+            labels = labels.long().view(batch_size * labels_maxlen)
+            loss = F.nll_loss(log_probs, labels, ignore_index=pad_index)
         else:
             loss = label_smooth_loss(
-                log_probs,
-                labels.float(),
-                num_labels,
-                smooth_param=label_smooth,
-            )
+                log_probs, labels.float(), num_labels, smooth_param=label_smooth)
 
         return loss
 
+    def decode(
+            self,
+            log_probs,
+            input_lengths,
+            labels,
+            label_lengths,
+            sos_index,
+            eos_index,
+            pad_index,
+            eps_index,
+        ):
+        # Use greedy decoding.
+        decoded = torch.argmax(log_probs, dim=2)
+        batch_size = decoded.size(0)
+        # Collapse each decoded sequence using CTC rules.
+        hypotheses = []
+        hypothesis_lengths = []
+        references = []
+        reference_lengths = []
+        for i in range(batch_size):
+            decoded_i = decoded[i]
+            hypothesis_i = []
+            for tok in decoded_i:
+                if tok.item() == sos_index:
+                    continue
+                if tok.item() == pad_index:
+                    continue
+                if tok.item() == eos_index:
+                    # once we reach an EOS token, we are done generating.
+                    break
+                hypothesis_i.append(tok.item())
+            hypotheses.append(hypothesis_i)
+            hypothesis_lengths.append(len(hypothesis_i))
+
+            if labels is not None:
+                reference_i = [tok.item() for tok in labels[i]
+                                if tok.item() != sos_index and 
+                                tok.item() != eos_index and 
+                                tok.item() != pad_index]
+                references.append(reference_i)
+                reference_lengths.append(len(reference_i))
+        
+        if labels is None: # Run at inference time.
+            references, reference_lengths = None, None
+
+        return hypotheses, hypothesis_lengths, references, reference_lengths
+
 
 class Listener(nn.Module):
-    """
-    Stack three layers of PyramidLSTMLayers to reduce
-    resolution 8 times.
+    """Listener (encoder for LAS model). Use a bidirectional 
+    LSTM as the encoder. 
+
+    Args:
+        input_dim: integer
+                    number of input features
+        num_class: integer
+                    size of transcription vocabulary
+        num_layers: integer (default: 2)
+                    number of layers in encoder LSTM
+        hidden_dim: integer (default: 128)
+                    number of hidden dimensions for encoder LSTM
+        bidirectional: boolean (default: True)
+                        is the encoder LSTM bidirectional?
     """
     
     def __init__(
             self,
             input_dim,
-            hidden_dim,
-            num_pyramid_layers=3,
-            dropout=0.,
+            hidden_dim=128,
+            num_pyramid_layers=2,
+            bidirectional=True,
+            dropout_rate=0.,
         ):
         super().__init__()
         self.rnn_layer0 = PyramidLSTMLayer(
-            input_dim, 
-            hidden_dim,
-            num_layers=1,
-            bidirectional=True,
-            dropout=dropout,
-        )
-
+            input_dim, hidden_dim, num_layers=1, bidirectional=bidirectional, dropout=dropout_rate)
         for i in range(1, num_pyramid_layers):
             setattr(
-                self, 
-                f'rnn_layer{i}',
+                self, f'rnn_layer{i}',
                 PyramidLSTMLayer(
-                    hidden_dim * 2, 
-                    hidden_dim,
-                    num_layers=1,
-                    bidirectional=True,
-                    dropout=dropout,
-                ),
+                    hidden_dim * 2, hidden_dim, num_layers=1,
+                    bidirectional=bidirectional, dropout=dropout_rate),
             )
-        
         self.num_pyramid_layers = num_pyramid_layers
 
-    def forward(self, inputs):
+    def forward(self, inputs, input_lengths):
         outputs, hiddens = self.rnn_layer0(inputs)
         for i in range(1, self.num_pyramid_layers):
-            outputs, hiddens = getattr(
-                self,
-                f'rnn_layer{i}',
-            )(outputs)
-        
+            outputs, hiddens = getattr(self, f'rnn_layer{i}')(outputs)
         return outputs, hiddens
 
 
@@ -152,15 +188,14 @@ class Speller(nn.Module):
             self,
             num_labels,
             label_maxlen,
-            speller_hidden_dim,
             listener_hidden_dim,
             mlp_hidden_dim,
             num_layers=1,
             multi_head=1,
             sos_index=0,
-            sample_decode=False,
         ):
         super().__init__()
+        speller_hidden_dim = listener_hidden_dim * 2
 
         self.rnn = nn.LSTM(
             num_labels + speller_hidden_dim,
@@ -169,14 +204,13 @@ class Speller(nn.Module):
             batch_first=True,
         )
         self.attention = AttentionLayer(
-            listener_hidden_dim * 2, 
+            speller_hidden_dim,
             mlp_hidden_dim, 
             multi_head=multi_head,
         )
         self.fc_out = nn.Linear(speller_hidden_dim*2, num_labels)
         self.num_labels = num_labels
         self.label_maxlen = label_maxlen
-        self.sample_decode = sample_decode
         self.sos_index = sos_index
 
     def step(self, inputs, last_hiddens, listener_feats):
@@ -225,18 +259,14 @@ class Speller(nn.Module):
                     output_tok[idx, int(i.item())] = 1
                 output_tok = output_tok.unsqueeze(1)
             else:
-                with torch.no_grad():
-                    if self.sample_decode:
-                        probs = torch.exp(log_probs)
-                        sampled_tok = Categorical(probs).sample()
-                    else:  # Pick max probability
-                        output_tok = torch.zeros_like(log_probs)
-                        sampled_tok = log_probs.topk(1)[1]
+                # Pick max probability
+                output_tok = torch.zeros_like(log_probs)
+                sampled_tok = log_probs.topk(1)[1]
 
-                    output_tok = torch.zeros_like(log_probs)
-                    for idx, i in enumerate(sampled_tok):
-                        output_tok[idx, int(i.item())] = 1
-                    output_tok = output_tok.unsqueeze(1)
+                output_tok = torch.zeros_like(log_probs)
+                for idx, i in enumerate(sampled_tok):
+                    output_tok[idx, int(i.item())] = 1
+                output_tok = output_tok.unsqueeze(1)
 
             rnn_inputs = torch.cat([output_tok, context.unsqueeze(1)], dim=-1)
 
@@ -247,24 +277,16 @@ class Speller(nn.Module):
 
 
 class PyramidLSTMLayer(nn.Module):
-
-    def __init__(
-            self, 
-            input_dim,
-            hidden_dim,
-            num_layers=1,
-            bidirectional=True,
-            dropout=0.,
-        ):
+    """A Pyramid LSTM layer is a standard LSTM layer that halves the size 
+    of the input in its hidden embeddings.
+    """
+    def __init__(self, input_dim, hidden_dim, num_layers=1,
+                 bidirectional=True, dropout=0.):
         super().__init__()
         self.rnn = nn.LSTM(
-            input_dim * 2, 
-            hidden_dim, 
-            num_layers=num_layers,
-            bidirectional=bidirectional,
-            dropout=dropout,
-            batch_first=True,
-        )
+            input_dim * 2, hidden_dim, num_layers=num_layers,
+            bidirectional=bidirectional, dropout=dropout,
+            batch_first=True)
         self.input_dim = input_dim
         self.hidden_dim = hidden_dim
         self.num_layers = num_layers
@@ -273,14 +295,8 @@ class PyramidLSTMLayer(nn.Module):
 
     def forward(self, inputs):
         batch_size, maxlen, input_dim = inputs.size()
-       
         # reduce time resolution?
-        inputs = inputs.contiguous().view(
-            batch_size,
-            maxlen // 2, 
-            input_dim * 2,
-        )
-        
+        inputs = inputs.contiguous().view(batch_size, maxlen // 2, input_dim * 2)
         outputs, hiddens = self.rnn(inputs)
         return outputs, hiddens
 
@@ -373,43 +389,3 @@ def label_smooth_loss(log_probs, labels, num_labels, smooth_param=0.1):
     loss = torch.sum(smooth_labels * log_probs, dim=-1)
     loss = torch.sum(loss / label_lengths, dim=-1)
     return -loss.mean()
-
-
-def compute_wer_for_las(
-        pred_labels, 
-        true_labels,
-        sos_index=0,
-        eos_index=1,
-        filler_index=0,
-    ):
-    """
-    Compute WER for LAS. We ignore start and end tokens.
-    """
-    wers = []
-    assert pred_labels.size(0) == true_labels.size(0)
-
-    for i in range(pred_labels.size(0)):
-        pred = pred_labels[i]
-        true = true_labels[i]
-
-        compressed_true = [tok.item() for tok in true 
-                           if tok.item() != sos_index and 
-                           tok.item() != eos_index and 
-                           tok.item() != filler_index]
-        compressed_pred = []
-        for tok in pred:
-            if tok.item() == sos_index:
-                continue
-            if tok.item() == filler_index:
-                continue
-            if tok.item() == eos_index:
-                break
-            compressed_pred.append(tok.item())
-
-        if len(compressed_pred) > 0:
-            dist = edit_distance(compressed_pred, compressed_true)
-            wer = dist[-1, -1] / float(dist.shape[1])
-            wers.append(wer)
-
-    wers = np.array(wers)
-    return float(np.mean(wers))
